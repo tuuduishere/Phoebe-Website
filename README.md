@@ -10,7 +10,7 @@ Sử dụng Git clone (đã cấp quyền contributor hay collaborator) trong VS
 git clone <link của repo>
 ```
 
-## Usage
+## Cách sử dụng
 
 ```bash
 git init (khởi tạo)
