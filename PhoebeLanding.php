@@ -1,8 +1,13 @@
+<?php
+// PhoebeLanding.php
+?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <link href='img/logolanding.png' rel='icon' style="height: auto; width: auto;"/>
   <title>Rising Star</title>
   <link rel="stylesheet" href="home-style.css">
   <script src="https://kit.fontawesome.com/0880e589c1.js" crossorigin="anonymous"></script>
@@ -27,7 +32,7 @@
   </ul>
   <div class="nav-buttons">
     <button class="btn-outline">PROJECT</button>
-    <button class="btn-primary">PHOEBE ID</button>
+    <button class="btn-primary" onclick="window.location.href='login.php'">PHOEBE ID</button>
   </div>
 </nav>
 
