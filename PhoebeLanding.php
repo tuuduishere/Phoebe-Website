@@ -25,11 +25,11 @@
     <span class="title">PhoebeTranCaoVan</span>
   </div>
   <ul class="nav-menu">
-    <li><a href="#">TRANG CHỦ</a></li>
+    <li><a href="PhoebeLanding.php">TRANG CHỦ</a></li>
     <li><a href="#">HOẠT ĐỘNG</a></li>
     <li><a href="#">THÀNH TÍCH</a></li>
     <li><a href="#">MERCHANDISE</a></li>
-    <li><a href="#">THÀNH VIÊN</a></li>
+    <li><a href="Members.html">THÀNH VIÊN</a></li>
     <li><a href="#">THÔNG BÁO CHIÊU MỘ</a></li>
   </ul>
   <div class="nav-buttons">
