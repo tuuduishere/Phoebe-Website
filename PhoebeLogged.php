@@ -32,15 +32,35 @@
   </ul>
   <div class="nav-buttons">
     <button class="btn-outline">PROJECT</button>
-    <?php
-      // Giả sử bạn đã lưu ID người dùng vào session khi đăng nhập
-      session_start();
-      if (isset($_SESSION['user_id'])) {
-      echo '<button class="btn-primary" onclick="window.location.href=\'#\'">ID: ' . htmlspecialchars($_SESSION['user_id']) . '</button>';
-      } else {
-      echo '<button class="btn-primary" onclick="window.location.href=\'login.html\'">TRANG CÁ NHÂN</button>';
-      }
-    ?>
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+require_once 'connect.php'; // file này cần kết nối đúng DB phoebedb
+
+if (isset($_SESSION['id'])) {
+    $id = $_SESSION['id'];
+
+    // Truy vấn DB để xác thực lại ID
+    $stmt = $conn->prepare("SELECT id FROM thanh_vien WHERE id = ?");
+    $stmt->bind_param("s", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result && $result->num_rows === 1) {
+        $row = $result->fetch_assoc();
+        echo '<button class="btn-primary" onclick="window.location.href=\'#\'">ID: ' . htmlspecialchars($row['id']) . '</button>';
+    } else {
+        echo '<button class="btn-primary" onclick="window.location.href=\'#\'">ID: ERROR</button>';
+    }
+
+    $stmt->close();
+    $conn->close();
+} else {
+    echo '<button class="btn-primary" onclick="window.location.href=\'login.php\'">TRANG CÁ NHÂN</button>';
+}
+?>
   </div>
 </nav>
 
@@ -71,7 +91,28 @@
 <!-- Thông tin về website -->
 <section class="intro-section">
   <h2>
-    Introducing <span class="highlight">PhoebeTCV</span>
+    <?php
+      // Kết nối đến cơ sở dữ liệu
+      $conn = new mysqli("localhost", "root", "", "phoebedb");
+      if ($conn->connect_error) {
+      echo 'Welcome back <span class="highlight">User</span>';
+      } else {
+      if (isset($_SESSION['id'])) {
+        $id = $conn->real_escape_string($_SESSION['id']);
+        $sql = "SELECT hoten FROM thanh_vien WHERE id = '$id' LIMIT 1";
+        $result = $conn->query($sql);
+        if ($result && $row = $result->fetch_assoc()) {
+        $hoten = htmlspecialchars($row['hoten']);
+        echo "Welcome back <span class=\"highlight\">$hoten</span>";
+        } else {
+        echo 'Welcome back <span class="highlight">User</span>';
+        }
+      } else {
+        echo 'Welcome back <span class="highlight">User</span>';
+      }
+      $conn->close();
+      }
+    ?>
   </h2>
   <p>
     <span style="color: #7454a4; font-family:'Spaceland', sans-serif; font-size: 2rem;">PhoebeTCV</span> là CLB Lập trình Trường THPT Trần Cao Vân - tỉnh Quảng Nam. Bao gồm những bạn học sinh năng động, sáng tạo, nơi các thành viên cùng nhau phát triển kỹ năng, chia sẻ đam mê, kề vai thi đấu và xây dựng những dự án có ý nghĩa.<br>
@@ -80,7 +121,7 @@
   <div class="features">
     <div class="feature-item">
       <span class="icon">🏆</span>
-      <h3>Achivement</h3>
+      <h3><a href='#'>Achivement</a></h3>
       <p>Đạt nhiều giải thưởng trong các cuộc thi sáng tạo, lập trình và hoạt động cộng đồng.</p>
     </div>
     <div class="feature-item">
@@ -129,6 +170,9 @@
   ">
   </div>
 </div>
+
+
+
 <!-- Footer -->
 <footer class="footer">
   <div class="footer-container">
@@ -149,16 +193,6 @@
   </div>
 </footer>
 
-  <!-- Hero Section 
-  <section class="hero">
-    <div class="hero-content">
-      <p class="hero-text">
-        Vikings với sự đầu tư bài bản, kĩ lưỡng và kinh nghiệm hàng chục năm trong ngành đã, đang và sẽ luôn là môi trường sinh hoạt, luyện tập lý tưởng tạo nên những nhà vô địch Esports - Champions Begin
-      </p>
-      <button class="hero-button">CHI NHÁNH</button>
-    </div>
-  </section>
--->
 
   <script src="script.js"></script>
 </body>

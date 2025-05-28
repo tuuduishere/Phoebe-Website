@@ -19,19 +19,19 @@
   <table>
     <tr>
       <th>ID</th>
-      <th>Tên</th>
+      <th>Tên Coder</th>
       <th>Email</th>
-      <th>Ngày tham gia</th>
+      <th>Vai trò</th>
       <th>Thao tác</th>
     </tr>
     <?php
-    $result = $conn->query("SELECT id, ho_ten, password, email, role, ngay_tham_gia FROM thanh_vien");
+    $result = $conn->query("SELECT id, hoten, password, email, role FROM thanh_vien");
     while ($row = $result->fetch_assoc()) {
       echo "<tr>
             <td>{$row['id']}</td>
-            <td>{$row['ho_ten']}</td>
+            <td>{$row['hoten']}</td>
             <td>{$row['email']}</td>
-            <td>{$row['ngay_tham_gia']}</td>
+            <td>{$row['role']}</td>
             <td><a href='delete.php?id={$row['id']}' class='delete' onclick='return confirm(\"Xóa thành viên này?\")'>Xóa</a></td>
           </tr>";
     }

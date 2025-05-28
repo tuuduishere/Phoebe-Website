@@ -14,27 +14,20 @@
         <img src="img/logolanding.png" alt="Phoebe Logo" class="logo">
         <h2>Đăng nhập thành viên</h2>
       </div>
-<?php
-$host = 'localhost';
-$user = 'root';
-$pass = '';
-$dbname = 'phoebedb';
 
-$conn = new mysqli($host, $user, $pass, $dbname);
-
-if ($conn->connect_error) {
-    die('Kết nối thất bại: ' . $conn->connect_error);
-}
-?>
 <?php
-      $error = '';
+session_start(); // gọi 1 lần duy nhất ở đầu
+require_once 'connect.php';
+
+$error = '';
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = trim($_POST['id'] ?? '');
     $password = trim($_POST['password'] ?? '');
 
-    // Truy vấn thành viên role = 2 và có ID đúng
-    $stmt = $conn->prepare("SELECT * FROM thanh_vien WHERE id = ? AND role = 2");
+    // Truy vấn thành viên theo ID
+    $stmt = $conn->prepare("SELECT * FROM thanh_vien WHERE id = ?");
     $stmt->bind_param("s", $id);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -43,49 +36,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user = $result->fetch_assoc();
 
         if ($password === $user['password']) {
-            session_start();
-            $_SESSION['user_id'] = $user['id'];
+            // Lưu ID & role vào session
+            $_SESSION['id'] = $user['id'];
             $_SESSION['role'] = $user['role'];
-            header('Location: PhoebeLogged.php');
+
+            // Chuyển hướng theo quyền
+            if ($user['role'] == 1) {
+                header('Location: admin.php');
+            } elseif ($user['role'] == 2) {
+                header('Location: PhoebeLogged.php');
+            } else {
+                $error = 'Vai trò không hợp lệ.';
+            }
             exit;
         } else {
             $error = 'Mật khẩu không đúng.';
         }
     } else {
-        $error = 'Không tìm thấy thành viên phù hợp hoặc không có quyền truy cập.';
+        $error = 'Không tìm thấy thành viên phù hợp.';
     }
-}
-      ?>
-      <?php
-      $error = '';
+} 
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $id = trim($_POST['id'] ?? '');
-        $password = trim($_POST['password'] ?? '');
-
-        // Truy vấn thành viên role = 1 và có ID đúng
-        $stmt = $conn->prepare("SELECT * FROM thanh_vien WHERE id = ? AND role = 1");
-        $stmt->bind_param("s", $id);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        if ($result && $result->num_rows === 1) {
-        $user = $result->fetch_assoc();
-
-        if ($password === $user['password']) {
-        session_start();
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['role'] = $user['role'];
-        header('Location: admin.php');
-        exit;
-        } else {
-        $error = 'Mật khẩu không đúng.';
-        }
-        } else {
-        $error = 'Không tìm thấy thành viên phù hợp hoặc không có quyền truy cập.';
-        }
-    }
-      ?>
+?>
       <?php if (!empty($error)): ?>
         <div class="error-message" style="color:red; margin-bottom:10px;">
           <?php echo htmlspecialchars($error); ?>
