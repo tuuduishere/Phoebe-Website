@@ -9,7 +9,7 @@
   
   <link href='img/logolanding.png' rel='icon' style="height: auto; width: auto;"/>
   <title>Rising Star</title>
-  <link rel="stylesheet" href="home-style.css">
+  <link rel="stylesheet" href="css/logged-style.css">
   <script src="https://kit.fontawesome.com/0880e589c1.js" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -23,7 +23,7 @@
     <span class="title">PhoebeTranCaoVan</span>
   </div>
   <ul class="nav-menu">
-    <li><a href="#">TRANG CHỦ</a></li>
+    <li><a href="PhoebeLanding.php">TRANG CHỦ</a></li>
     <li><a href="#">HOẠT ĐỘNG</a></li>
     <li><a href="#">THÀNH TÍCH</a></li>
     <li><a href="#">MERCHANDISE</a></li>
