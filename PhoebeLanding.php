@@ -5,28 +5,17 @@
 <html lang="vi">
 
 <head>
-<<<<<<< HEAD:PhoebeLanding.php
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
   <link href='img/logolanding.png' rel='icon' style="height: auto; width: auto;"/>
   <title>Rising Star</title>
-  <link rel="stylesheet" href="home-style.css">
+  <link rel="stylesheet" href="css/home-style.css">
   <script src="https://kit.fontawesome.com/0880e589c1.js" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
-=======
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rising Star</title>
-    <link rel="stylesheet" href="home-style.css">
-    <script src="https://kit.fontawesome.com/0880e589c1.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
->>>>>>> c53103a8e4a3b13155ce20e6a136929509c7d409:PhoebeLanding.html
 </head>
 
 <body class="bg-black text-white">
 
-<<<<<<< HEAD:PhoebeLanding.php
   <!-- Navbar -->
 <nav class="navbar" id="navbar">
   <div class="nav-left">
@@ -47,28 +36,6 @@
     <button class="btn-primary" onclick="window.location.href='login.php'">PHOEBE ID</button>
   </div>
 </nav>
-=======
-    <!-- Navbar -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-left">
-            <i class="fa-solid fa-bars-staggered"></i>
-            <img src="img/logolanding.png" alt="PhoebeLogo" class="logo">
-            <span class="title">PhoebeTranCaoVan</span>
-        </div>
-        <ul class="nav-menu">
-            <li><a href="#">TRANG CHỦ</a></li>
-            <li><a href="#">HOẠT ĐỘNG</a></li>
-            <li><a href="#">THÀNH TÍCH</a></li>
-            <li><a href="#">MERCHANDISE</a></li>
-            <li><a href="#">THÀNH VIÊN</a></li>
-            <li><a href="#">THÔNG BÁO CHIÊU MỘ</a></li>
-        </ul>
-        <div class="nav-buttons">
-            <button class="btn-outline">PROJECT</button>
-            <button class="btn-primary">PHOEBE ID</button>
-        </div>
-    </nav>
->>>>>>> c53103a8e4a3b13155ce20e6a136929509c7d409:PhoebeLanding.html
 
     <div style="width:100%;min-height:80px;background:#fff;position:relative;top:-30px;z-index:2;"></div>
     <!-- Background Video -->

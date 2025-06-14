@@ -1,7 +1,7 @@
 <?php
 $host = 'localhost';
 $user = 'root';
-$pass = '';
+$pass = ''; // điền nếu bạn có mật khẩu
 $dbname = 'phoebedb';
 
 $conn = new mysqli($host, $user, $pass, $dbname);
