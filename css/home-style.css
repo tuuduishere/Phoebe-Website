@@ -2,7 +2,7 @@ body,
 html {
     margin: 0;
     padding: 0;
-    font-family: "Arial", sans-serif;
+    font-family: "Kelson Sans", sans-serif;
 }
 
 body {
@@ -103,23 +103,28 @@ body {
 }
 
 @font-face {
-    font-family: "Spaceland";
-    src: url("fonts/Pepper Type - Spaceland-Ten.otf") format("opentype");
+    font-family: "Angas";
+    src: url("fonts/angas/angas v3 bold.otf") format("opentype");
+}
+@font-face {
+    font-family: "Kelson Sans";
+    src: url("fonts/SVN-Kelson Sans Regular.otf") format("opentype");
 }
 
 .navbar {
     display: flex;
+    margin: 0;
     justify-content: space-between;
     align-items: center;
     background: white;
-    padding: 1rem 1.25rem;
+    padding: 1.15rem 1.25rem;
     position: sticky;
     top: 0;
     z-index: 50;
     color: black;
 }
 .nav .span {
-    font-family: "SpaceLand", sans-serif;
+    font-family: "Angas", sans-serif;
 }
 .nav-left {
     display: flex;
@@ -137,7 +142,7 @@ body {
 }
 
 .nav-left i:hover {
-    background: #7454a4;
+    background: #328396;
     color: #ffffff;
 }
 
@@ -147,9 +152,9 @@ body {
 }
 
 .title {
-    font-family: "Spaceland", sans-serif;
+    font-family: "Angas", sans-serif;
     font-weight: normal;
-    font-size: 2rem;
+    font-size: 1.25rem;
 }
 
 .nav-menu {
@@ -166,17 +171,17 @@ body {
 
 .btn-outline {
     background-color: #ffffff;
-    color: #7454a4;
+    color: #328396;
     border: 2px solid transparent;
     border-radius: 2rem;
     background: linear-gradient(#fff, #fff) padding-box,
-        linear-gradient(90deg, #000000, #ec4899, #7454a4) border-box;
-    color: #7454a4;
+        linear-gradient(90deg, #000000, #568f9c, #328396) border-box;
+    color: #328396;
 }
 
 .btn-primary {
-    background-color: #7454a4;
-    border: #7454a4 2px solid;
+    background-color: #328396;
+    border: #328396 2px solid;
     color: white;
 }
 
@@ -195,7 +200,7 @@ body {
     }
 
     .nav-menu a:hover {
-        background: #7454a4;
+        background: #328396;
         color: #fff;
     }
 }
@@ -219,7 +224,7 @@ body {
 }
 
 .navbar.dark-theme .nav-left i:hover {
-    background-color: #7454a4;
+    background-color: #328396;
     color: rgb(0, 0, 0);
 }
 
@@ -229,7 +234,7 @@ body {
 }
 
 .navbar.dark-theme .nav-menu a:hover {
-    background: #7454a4;
+    background: #328396;
     color: rgb(0, 0, 0);
 }
 
@@ -240,8 +245,8 @@ body {
 .navbar.dark-theme .btn-outline {
     border: 2px solid transparent;
     background: linear-gradient(#000000, #000000) padding-box,
-        linear-gradient(90deg, #ffffff, #ec4899, #7454a4) border-box;
-    color: #7454a4;
+        linear-gradient(90deg, #ffffff, #568f9c, #328396) border-box;
+    color: #328396;
 }
 
 .navbar.dark-theme .btn-primary {
@@ -305,7 +310,7 @@ body {
     text-align: center;
     color: #e5e5e5;
     background-color: #000000;
-    font-family: "Arial", sans-serif;
+    font-family: "Kelson Sans", sans-serif;
 }
 
 /* Section Title */
@@ -314,15 +319,13 @@ body {
     font-weight: 700;
     margin-bottom: 1rem;
     color: #ffffff;
-    font-family: "Spaceland", sans-serif;
+    font-family:"Angas", sans-serif;
 }
-
 .intro-section .highlight {
-    color: #7454a4;
+    color: #328396;
 }
 
-/* Description */
-.intro-section>p {
+.intro-section > p {
     font-size: 1.25rem;
     color: #ffffff;
     max-width: 1200px;
@@ -330,7 +333,6 @@ body {
     line-height: 1.8;
 }
 
-/* Feature Grid */
 .features {
     display: flex;
     flex-wrap: wrap;
@@ -338,7 +340,6 @@ body {
     justify-content: center;
 }
 
-/* Feature Item */
 .feature-item {
     background-color: #ffffff;
     padding: 2rem 1.5rem;
@@ -360,7 +361,7 @@ body {
 
 .feature-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 25px 50px #7454a4;
+    box-shadow: 0 25px 50px #328396;
 }
 
 /* Icon */
@@ -374,8 +375,8 @@ body {
 .feature-item h3 {
     font-size: 2rem;
     font-weight: 600;
-    font-family: "Spaceland", sans-serif;
-    color: #7454a4;
+    font-family: "Angas", sans-serif;
+    color: #328396;
     margin-bottom: 0.6rem;
 }
 
@@ -417,7 +418,7 @@ body {
     color: #ffffff;
     padding: 4rem 1.5rem;
     margin-bottom: 5rem;
-    font-family: "Arial", sans-serif;
+    font-family: "Kelson Sans", sans-serif;
 }
 
 .why-container {
@@ -430,12 +431,12 @@ body {
 .why-title {
     font-size: 3rem;
     font-weight: 700;
-    font-family: "Spaceland", sans-serif;
+    font-family: "Angas", sans-serif;
     margin-bottom: 2rem;
 }
 
 .why-title .highlight {
-    color: #7454a4;
+    color: #328396;
 }
 
 /* Bullet List - Clean Style */
@@ -462,7 +463,7 @@ body {
 }
 
 .why-list li:hover {
-    background: #7454a4;
+    background: #328396;
 }
 
 /* Features Grid */
@@ -492,7 +493,7 @@ body {
 
 .why-feature-box:hover {
     transform: translateY(-10px);
-    box-shadow: 0 25px 50px #7454a4;
+    box-shadow: 0 25px 50px #328396;
 }
 
 /* Icon */
@@ -506,8 +507,8 @@ body {
 .why-feature-box h4 {
     font-size: 2rem;
     font-weight: 600;
-    font-family: "Spaceland", sans-serif;
-    color: #7454a4;
+    font-family: "Angas", sans-serif;
+    color: #328396;
     margin-bottom: 0.6rem;
 }
 
@@ -549,10 +550,10 @@ body {
 
 /* Footer */
 .footer {
-    background-color: #7454a4;
+    background-color: #328396;
     color: #cccccc;
     padding: 20px 0;
-    font-family: "Arial", sans-serif;
+    font-family: "Kelson Sans", sans-serif;
     font-size: 0.95rem;
 }
 
@@ -578,10 +579,10 @@ body {
 }
 
 .footer-title {
-    font-size: 2.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: #ffffff;
-    font-family: "Spaceland", sans-serif;
+    font-family: "Angas", sans-serif;
 }
 
 .footer-info p {
