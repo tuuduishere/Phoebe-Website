@@ -21,13 +21,19 @@ git commit (Thực hiện commit cho repo)
 Tạo PR ở trên GitHub hoặc Terminal.
 ```
 
+
+## Các Contributer của dự án
+| Họ Tên  | Vai trò |
+| ------------- | ------------- | 
+| Võ Lê Chí Dũng  | Head Project  |
+| Unknown  | ???  | 
+| Unknown  | ???  | 
+| Unknown  | ???  | 
+
 ## Cách làm việc
 
 Pull request miễn phí nên code đc tính năng gì hay hoặc fix đc bug nào thì tạo 1 cái. Ib riêng cho chủ thớt để tiến hành merge code rồi test (contributor hay collaborator phải test ở máy trước khi tạo pull request, thằng chủ chỉ test lại, kh fix lỗi hộ hoặc nhận code lỗi).
 
-### TUYỆT ĐỐI KHÔNG PUSH VÀO NHÁNH MAIN!
-### TUYỆT ĐỐI KHÔNG PUSH VÀO NHÁNH MAIN!!
-### TUYỆT ĐỐI KHÔNG PUSH VÀO NHÁNH MAIN!!!
-### Điều quan trọng nói lại 3 lần. các contributor hay collaborator chỉ đc làm việc trên branch của mình!
+### Các contributor hay collaborator chỉ đc làm việc trên branch của mình!
 
 ## Bản quyền thuộc về PhoebeTranCaoVan.

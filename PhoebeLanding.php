@@ -7,8 +7,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link href='img/logolanding.png' rel='icon' style="height: auto; width: auto;"/>
-  <title>Rising Star</title>
+  <link href='img/logofavicon.png' rel='icon'/>
+  <title>PhoebeTranCaoVan</title>
   <link rel="stylesheet" href="css/home-style.css">
   <script src="https://kit.fontawesome.com/0880e589c1.js" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -20,41 +20,41 @@
 <nav class="navbar" id="navbar">
   <div class="nav-left">
     <i class="fa-solid fa-bars-staggered"></i>
-    <img src="img/logolanding.png" alt="PhoebeLogo" class="logo">
+    <img src="img/logofavicon.png" alt="PhoebeLogo" class="logo">
     <span class="title">PhoebeTranCaoVan</span>
   </div>
   <ul class="nav-menu">
-    <li><a href="#">TRANG CHỦ</a></li>
+    <li><a href="PhoebeLanding.php">TRANG CHỦ</a></li>
     <li><a href="#">HOẠT ĐỘNG</a></li>
     <li><a href="#">THÀNH TÍCH</a></li>
-    <li><a href="#">MERCHANDISE</a></li>
+    <li><a href="merchandise-page.html">MERCHANDISE</a></li>
     <li><a href="#">THÀNH VIÊN</a></li>
     <li><a href="#">THÔNG BÁO CHIÊU MỘ</a></li>
   </ul>
   <div class="nav-buttons">
-    <button class="btn-outline">PROJECT</button>
+    <button class="btn-outline">Hội cựu học sinh CLB</button>
     <button class="btn-primary" onclick="window.location.href='login.php'">PHOEBE ID</button>
   </div>
 </nav>
 
-    <div style="width:100%;min-height:80px;background:#fff;position:relative;top:-30px;z-index:2;"></div>
-    <!-- Background Video -->
-    <!-- index.html -->
-    <div class="video-area">
-        <div class="video-wrapper">
-            <div class="video-container">
-                <video autoplay muted loop playsinline class="video-bg">
-                    <source src="img/background.mp4" type="video/mp4">
-                    Trình duyệt của bạn không hỗ trợ video.
-                </video>
+        <div style="width:100%;min-height:80px;background:#fff;position:relative;top:-30px;z-index:2;"></div>
+        <!-- Background Video -->
+        <!-- index.html -->
+        <div class="video-area">
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <video autoplay muted loop playsinline class="video-bg">
+                        <source src="img/background.mp4" type="video/mp4">
+                        Trình duyệt của bạn không hỗ trợ video.
+                    </video>
+                </div>
             </div>
+            <!-- Vùng màu trắng cố định sau video, đè lên video một chút -->
+            <div id="white-block" style="width:100%;min-height:80px;background:#fff;position:relative;top:-30px;z-index:2;">
+            </div>
+            <!-- Gradient chuyển mượt sau video -->
+            <div class="gradient-transition"></div>
         </div>
-        <!-- Vùng màu trắng cố định sau video, đè lên video một chút -->
-        <div id="white-block" style="width:100%;min-height:80px;background:#fff;position:relative;top:-30px;z-index:2;">
-        </div>
-        <!-- Gradient chuyển mượt sau video -->
-        <div class="gradient-transition"></div>
-    </div>
 
     <!-- Thông tin về website -->
     <section class="intro-section">
@@ -62,7 +62,7 @@
             Introducing <span class="highlight">PhoebeTCV</span>
         </h2>
         <p>
-            <span style="color: #7454a4; font-family:'Spaceland', sans-serif; font-size: 2rem;">PhoebeTCV</span> là CLB Lập
+            <span style="color: #328396; font-family:'Angas', sans-serif; font-size: 1.5rem;">PhoebeTCV</span> là CLB Lập
             trình Trường THPT Trần Cao Vân - tỉnh Quảng Nam. Bao gồm những bạn học sinh năng động, sáng tạo, nơi các thành
             viên cùng nhau phát triển kỹ năng, chia sẻ đam mê, kề vai thi đấu và xây dựng những dự án có ý nghĩa.<br>
             Chúng tớ hướng tới việc tạo ra môi trường thân thiện, chuyên nghiệp và đầy cảm hứng cho mọi người.
@@ -88,7 +88,7 @@
 
     <section class="why-choose-section">
         <div class="why-container">
-            <h2 class="why-title">Why choose us - <span class="highlight">PhoebeTCV</span> ?</h2>
+            <h2 class="why-title">Why choose us - <span class="highlight">PhoebeTCV</span>?</h2>
             <ul class="why-list">
                 <li>Môi trường học tập thân thiện, sáng tạo và chuyên nghiệp.</li>
                 <li>Được hướng dẫn bởi các thành viên giàu kinh nghiệm, hỗ trợ tận tình.</li>
@@ -115,7 +115,7 @@
         <div style="
         width: 100%;
         height: 100%;
-        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #7454a4 100%);
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #328396 100%);
       ">
         </div>
     </div>
@@ -123,7 +123,7 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="img/logolanding.png" alt="Phoebe Logo" class="footer-logo">
+                <img src="img/logofavicon.png" alt="Phoebe Logo" class="footer-logo">
                 <span class="footer-title">PhoebeTranCaoVan</span>
             </div>
             <div class="footer-info">

@@ -113,63 +113,18 @@ if (isset($_SESSION['id'])) {
       $conn->close();
       }
     ?>
-  </h2>
-  <p>
-    <span style="color: #7454a4; font-family:'Spaceland', sans-serif; font-size: 2rem;">PhoebeTCV</span> là CLB Lập trình Trường THPT Trần Cao Vân - tỉnh Quảng Nam. Bao gồm những bạn học sinh năng động, sáng tạo, nơi các thành viên cùng nhau phát triển kỹ năng, chia sẻ đam mê, kề vai thi đấu và xây dựng những dự án có ý nghĩa.<br>
-    Chúng tớ hướng tới việc tạo ra môi trường thân thiện, chuyên nghiệp và đầy cảm hứng cho mọi người.
-  </p>
-  <div class="features">
-    <div class="feature-item">
-      <span class="icon">🏆</span>
-      <h3><a href='#'>Achivement</a></h3>
-      <p>Đạt nhiều giải thưởng trong các cuộc thi sáng tạo, lập trình và hoạt động cộng đồng.</p>
-    </div>
-    <div class="feature-item">
-      <span class="icon">👥</span>
-      <h3>Members</h3>
-      <p>Quy tụ các bạn trẻ tài năng, nhiệt huyết, luôn sẵn sàng học hỏi và hỗ trợ lẫn nhau.</p>
-    </div>
-    <div class="feature-item">
-      <span class="icon">💡</span>
-      <h3>Project</h3>
-      <p>Thực hiện nhiều dự án sáng tạo, mang lại giá trị thiết thực cho cộng đồng và xã hội.</p>
-    </div>
-  </div>
-</section>
-
-<section class="why-choose-section">
-  <div class="why-container">
-    <h2 class="why-title">Why choose us - <span class="highlight">PhoebeTCV</span> ?</h2>
-    <ul class="why-list">
-      <li>Môi trường học tập thân thiện, sáng tạo và chuyên nghiệp.</li>
-      <li>Được hướng dẫn bởi các thành viên giàu kinh nghiệm, hỗ trợ tận tình.</li>
-      <li>Cơ hội tham gia các cuộc thi, dự án thực tế và hoạt động ngoại khóa bổ ích.</li>
-      <li>Kết nối, giao lưu với cộng đồng lập trình viên trẻ trên toàn quốc.</li>
-    </ul>
-    <div class="why-features">
-      <div class="why-feature-box">
-        <span class="icon">🚀</span>
-        <h4>No Pain No Gain</h4>
-        <p>Slogan của Phoebe K01</p>
-      </div>
-      <div class="why-feature-box">
-        <span class="icon">🤝</span>
-        <h4>We Gotta Win 'One More'</h4>
-        <p>Slogan của Phoebe K02.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Gradient từ đen sang tím trước footer -->
-<div class="w-full h-12">
-  <div style="
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #7454a4 100%);
-  ">
-  </div>
-</div>
+    </h2>
+    <!-- Thông tin cá nhân sẽ hiển thị ở đây: Họ tên, Email, Số điện thoại, Ngày sinh, Giới tính -->
+    <section class="profile-info">
+      <h3>Thông tin cá nhân</h3>
+      <ul>
+        <li><strong>Họ tên:</strong> ...</li>
+        <li><strong>Email:</strong> ...</li>
+        <li><strong>Số điện thoại:</strong> ...</li>
+        <li><strong>Ngày sinh:</strong> ...</li>
+        <li><strong>Giới tính:</strong> ...</li>
+      </ul>
+    </section>
 
 
 
