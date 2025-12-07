@@ -23,7 +23,12 @@ Tạo PR ở trên GitHub hoặc Terminal.
 
 
 ## Các Contributer của dự án
-Võ Lê Chí Dũng - Head Project - Full Stack.
+| Họ Tên  | Vai trò |
+| ------------- | ------------- | 
+| Võ Lê Chí Dũng  | Head Project  |
+| Unknown  | ???  | 
+| Unknown  | ???  | 
+| Unknown  | ???  | 
 
 ## Cách làm việc
 
