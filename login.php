@@ -4,14 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Đăng nhập | PhoebeTCV</title>
-  <link rel="stylesheet" href="css/ login-style.css" />
-  <link rel="icon" href="img/logolanding.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/login-style.css" />
+  <script src="script.js"></script>
+  <link rel="icon" href="img/logofavicon.png" type="image/x-icon">
 </head>
 <body>
   <div class="login-container">
     <div class="login-box">
       <div class="login-header">
-        <img src="img/logolanding.png" alt="Phoebe Logo" class="logo">
+        <img src="img/logofavicon.png" alt="Phoebe Logo" class="logo">
         <h2>Đăng nhập thành viên</h2>
       </div>
 
@@ -58,12 +59,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } 
 
 ?>
-      <?php if (!empty($error)): ?>
-        <div class="error-message" style="color:red; margin-bottom:10px;">
-          <?php echo htmlspecialchars($error); ?>
-        </div>
-      <?php endif; ?>
-      <form action="" method="POST">
+  <?php if (!empty($error)): ?>
+    <div class="error-message" style="color:red; margin-bottom:10px;">
+      <?php echo htmlspecialchars($error); ?>
+    </div>
+  <?php endif; ?>
+  <form action="" method="POST">
   <label for="id">Mã thành viên (6 chữ số)</label>
   <input type="text" id="id" name="id" pattern="\d{6}" maxlength="6" required />
 
@@ -71,6 +72,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <input type="password" id="password" name="password" required />
 
   <button type="submit">Đăng nhập</button>
+  <button type="button" onclick="openNfcPopup()">Quét thẻ thành viên để đăng nhập</button>
+</form>
+
+
 </form>
     </div>
   </div>

@@ -315,7 +315,7 @@ body {
 
 /* Section Title */
 .intro-section h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
     color: #ffffff;
@@ -429,7 +429,7 @@ body {
 
 /* Section Title */
 .why-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     font-family: "Angas", sans-serif;
     margin-bottom: 2rem;
@@ -549,70 +549,116 @@ body {
 }
 
 /* Footer */
-.footer {
-    background-color: #328396;
-    color: #cccccc;
-    padding: 20px 0;
-    font-family: "Kelson Sans", sans-serif;
-    font-size: 0.95rem;
-}
+/* Thiết lập chung */
+        body {
+            margin: 0;
+            font-family: 'Kelson Sans', sans-serif;
+            background-color: #f4f4f4; /* Nền trang */
+        }
 
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1.5rem;
-}
+        /* 1. Thiết lập Footer chính (Giống kích cỡ Nav bar) */
+        .compact-footer-dark {
+            background: linear-gradient(to bottom, #328396 0%, #000000 75%);
+            color: #ccc; /* Màu chữ xám nhạt */
+            padding: 15px 0; /* Rất ít padding để giữ kích thước nhỏ */
+            font-size: 13px;
+        }
 
-.footer-brand {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
+        /* 2. Container (Giữ nội dung ở giữa) */
+        .footer-container-narrow {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between; /* Đẩy hai bên ra xa */
+            align-items: center;
+        }
 
-.footer-logo {
-    width: 80px;
-    margin-right: 20px;
-}
+        /* 3. Phần bên Trái: Thương hiệu & Bản quyền */
+        .footer-left-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
 
-.footer-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #ffffff;
-    font-family: "Angas", sans-serif;
-}
+        .brand-group {
+            display: flex;
+            align-items: center;
+            /* Giống như hình ảnh bạn gửi: icon và tên cạnh nhau */
+        }
+        
+        .brand-group img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px; /* Khoảng cách giữa icon và tên */
+            font-size: 1rem;
+        }
+        
+        .brand-name {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            font-family: "Angas", sans-serif;
+            color: #fff; /* Tên thương hiệu màu trắng */
+        }
 
-.footer-info p {
-    margin: 0.2rem 0;
-    font-style: italic;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #000000;
-}
+        /* 4. Phần bên Phải: Liên kết & Mạng xã hội */
+        .footer-right-content {
+            display: flex;
+            align-items: center;
+            gap: 25px; /* Khoảng cách giữa các nhóm */
+        }
 
-.footer-social {
-    display: flex;
-    gap: 1.2rem;
-    font-size: 1.2rem;
-}
+        /* 5. Liên kết */
+        .footer-links-inline a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 15px; /* Khoảng cách giữa các liên kết */
+            transition: color 0.3s;
+        }
 
-.footer-social a {
-    color: #000000;
-    transition: color 0.3s ease;
-}
+        .footer-links-inline a:hover {
+            color: #4a90e2; /* Màu hover */
+        }
 
-.footer-social a:hover {
-    color: #ffffff;
-}
+        /* 6. Mạng xã hội */
+        .social-icons-compact a {
+            color: #ccc;
+            font-size: 14px;
+            margin-left: 10px;
+            transition: color 0.3s;
+        }
 
-/* Responsive */
-@media (min-width: 768px) {
-    .footer-container {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-    }
-}
+        .social-icons-compact a:hover {
+            color: #4a90e2;
+        }
+
+        /* 7. Responsive (Cho điện thoại) */
+        @media (max-width: 768px) {
+            .footer-container-narrow {
+                flex-direction: column; /* Xếp chồng trên màn hình nhỏ */
+                text-align: center;
+                gap: 15px;
+            }
+
+            .footer-left-content {
+                flex-direction: column; 
+                gap: 5px;
+            }
+
+            .footer-right-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .footer-links-inline {
+                /* Đặt các liên kết thành cột */
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .footer-links-inline a {
+                margin: 0; /* Bỏ margin ngang */
+            }
+        }

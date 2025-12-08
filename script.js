@@ -12,6 +12,15 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, { threshold: 0.8 });
+function openNfcPopup() {
+    // Kiểm tra xem thiết bị có hỗ trợ NFC không
+    if ('NFC' in window) {
+    // Mở cửa sổ pop up cho quét thẻ
+    alert('Mở cửa sổ quét thẻ NFC...'); // Thay thế bằng mã mở pop up thực tế
+    } else {
+    alert('Thiết bị không hỗ trợ NFC.');
+    }
+}
 
 observer.observe(whiteBlock);
 
