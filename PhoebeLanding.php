@@ -39,23 +39,19 @@
 
         <div style="width:100%;min-height:80px;background:#fff;position:relative;top:-30px;z-index:2;"></div>
         <!-- Background Video -->
-        <!-- index.html -->
         <div class="video-area">
             <div class="video-wrapper">
-                <div class="video-container">
-                    <video autoplay muted loop playsinline class="video-bg">
-                        <source src="img/background.mp4" type="video/mp4">
-                        Trình duyệt của bạn không hỗ trợ video.
-                    </video>
-                </div>
+            <div class="video-container">
+                <video autoplay muted loop playsinline class="video-bg" style="pointer-events: none;">
+                <source src="img/background.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ video.
+                </video>
             </div>
-            <!-- Vùng màu trắng cố định sau video, đè lên video một chút -->
-            <div id="white-block" style="width:100%;min-height:80px;background:#fff;position:relative;top:-30px;z-index:2;">
             </div>
-            <!-- Gradient chuyển mượt sau video -->
+            <div id="white-block" style="width:100%;min-height:80px;background:#fff;position:relative;top:-30px;z-index:2;"></div>
             <div class="gradient-transition"></div>
         </div>
-
+<!-- REWORK LẠI BODY -->
     <!-- Thông tin về website -->
     <section class="intro-section">
         <h2>
@@ -110,6 +106,9 @@
         </div>
     </section>
 
+
+    
+ <!-- Footer -->
     <!-- Gradient từ đen sang tím trước footer -->
     <div class="w-full h-12">
         <div style="
@@ -119,25 +118,40 @@
       ">
         </div>
     </div>
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <img src="img/logofavicon.png" alt="Phoebe Logo" class="footer-logo">
-                <span class="footer-title">PhoebeTranCaoVan</span>
+    <footer class="compact-footer-dark">
+        <div class="footer-container-narrow">
+            
+            <div class="footer-left-content">
+                
+                <div class="brand-group">
+                    <img src="img/logofavicon.png" alt=""> <span class="brand-name">PhoebeTranCaoVan</span>
+                </div>
+                
+                <span class="copyright-text">
+                    &copy; 2025. All Rights Reserved.
+                </span>
             </div>
-            <div class="footer-info">
-                <p>© 2025 PhoebeTCV. All rights reserved.</p>
-                <p>Trường THPT Trần Cao Vân, Quảng Nam</p>
+            
+            <div class="footer-right-content">
+                
+                <div class="footer-links-inline">
+                    <a href="#">Dịch Vụ</a>
+                    <a href="#">Sự Kiện</a>
+                    <a href="#">Liên Hệ</a>
+                    <a href="#">Điều Khoản</a>
+                </div>
+
+                <div class="social-icons-compact">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
-            <div class="footer-social">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="Github"><i class="fab fa-github"></i></a>
-            </div>
+
         </div>
     </footer>
+
+</body>
 
     <!-- Hero Section 
     <section class="hero">
