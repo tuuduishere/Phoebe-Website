@@ -25,8 +25,8 @@ Tạo PR ở trên GitHub hoặc Terminal.
 
 
 ## Các Contributer của dự án
-| Họ Tên  | Vai trò |
-| ------------- | ------------- | 
+| Họ Tên  | Vai trò | Dev Type |
+| ------------- | ------------- | ------------- | 
 | Võ Lê Chí Dũng  | Head Project  | Full-Stack Dev |
 | Unknown  | ???  | ??? |
 | Unknown  | ???  | ??? |
