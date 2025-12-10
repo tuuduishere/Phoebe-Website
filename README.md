@@ -2,6 +2,8 @@
 
 Đây sẽ là website chính thức của CLB. Nghiêm cấm hành vi share, fork hay clone mà không xin phép bản quyền!!
 
+## Thông báo tiến trình hoàn thành: 45%
+
 ## Hướng dẫn cài đặt
 
 Sử dụng Git clone (đã cấp quyền contributor hay collaborator) trong VSCode.
@@ -25,10 +27,10 @@ Tạo PR ở trên GitHub hoặc Terminal.
 ## Các Contributer của dự án
 | Họ Tên  | Vai trò |
 | ------------- | ------------- | 
-| Võ Lê Chí Dũng  | Head Project  |
-| Unknown  | ???  | 
-| Unknown  | ???  | 
-| Unknown  | ???  | 
+| Võ Lê Chí Dũng  | Head Project  | Full-Stack Dev |
+| Unknown  | ???  | ??? |
+| Unknown  | ???  | ??? |
+| Unknown  | ???  | ??? |
 
 ## Cách làm việc
 
