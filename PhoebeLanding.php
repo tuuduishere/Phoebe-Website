@@ -53,60 +53,162 @@
         </div>
 <!-- REWORK LẠI BODY -->
     <!-- Thông tin về website -->
-    <section class="intro-section">
-        <h2>
-            Introducing <span class="highlight">PhoebeTCV</span>
-        </h2>
-        <p>
-            <span style="color: #328396; font-family:'Angas', sans-serif; font-size: 1.5rem;">PhoebeTCV</span> là CLB Lập
-            trình Trường THPT Trần Cao Vân - tỉnh Quảng Nam. Bao gồm những bạn học sinh năng động, sáng tạo, nơi các thành
-            viên cùng nhau phát triển kỹ năng, chia sẻ đam mê, kề vai thi đấu và xây dựng những dự án có ý nghĩa.<br>
-            Chúng tớ hướng tới việc tạo ra môi trường thân thiện, chuyên nghiệp và đầy cảm hứng cho mọi người.
-        </p>
-        <div class="features">
-            <div class="feature-item">
-                <span class="icon">🏆</span>
-                <h3>Achivement</h3>
-                <p>Đạt nhiều giải thưởng trong các cuộc thi sáng tạo, lập trình và hoạt động cộng đồng.</p>
-            </div>
-            <div class="feature-item">
-                <span class="icon">👥</span>
-                <h3>Members</h3>
-                <p>Quy tụ các bạn trẻ tài năng, nhiệt huyết, luôn sẵn sàng học hỏi và hỗ trợ lẫn nhau.</p>
-            </div>
-            <div class="feature-item">
-                <span class="icon">💡</span>
-                <h3>Project</h3>
-                <p>Thực hiện nhiều dự án sáng tạo, mang lại giá trị thiết thực cho cộng đồng và xã hội.</p>
-            </div>
-        </div>
-    </section>
+    <div class="container">
 
-    <section class="why-choose-section">
-        <div class="why-container">
-            <h2 class="why-title">Why choose us - <span class="highlight">PhoebeTCV</span>?</h2>
-            <ul class="why-list">
-                <li>Môi trường học tập thân thiện, sáng tạo và chuyên nghiệp.</li>
-                <li>Được hướng dẫn bởi các thành viên giàu kinh nghiệm, hỗ trợ tận tình.</li>
-                <li>Cơ hội tham gia các cuộc thi, dự án thực tế và hoạt động ngoại khóa bổ ích.</li>
-                <li>Kết nối, giao lưu với cộng đồng lập trình viên trẻ trên toàn quốc.</li>
-            </ul>
-            <div class="why-features">
-                <div class="why-feature-box">
-                    <span class="icon">🚀</span>
-                    <h4>No Pain No Gain</h4>
-                    <p>Slogan của Phoebe K01</p>
-                </div>
-                <div class="why-feature-box">
-                    <span class="icon">🤝</span>
-                    <h4>We Gotta Win 'One More'</h4>
-                    <p>Slogan của Phoebe K02.</p>
+        <header class="header">
+            <div class="header-item">
+                <div class="icon game-icon"></div>
+                <div class="text">
+                    <h3>HOẠT ĐỘNG</h3>
+                    <p>Các hoạt động của CLB trong năm</p>
                 </div>
             </div>
-        </div>
-    </section>
+            <div class="header-item">
+                <div class="icon cyber-icon"></div>
+                <div class="text">
+                    <h3>THÀNH TÍCH</h3>
+                    <p>Những thành tích mà CLB đã đạt được tại các kì thi</p>
+                </div>
+            </div>
+            <div class="header-item">
+                <div class="icon esports-icon active"></div>
+                <div class="text">
+                    <h3>MERCHANDISE</h3>
+                    <p>Những sản phẩm siêu chất của CLB</p>
+                </div>
+            </div>
+            <div class="header-item">
+                <div class="icon business-icon"></div>
+                <div class="text">
+                    <h3>THÀNH VIÊN</h3>
+                    <p>Những chiếc thành viên tài năng của CLB</p>
+                </div>
+            </div>
+        </header>
 
+        <section class="featured-tournaments">
+            <div class="title-row">
+                <h2>THÔNG TIN NỔI BẬT</h2>
+                <div class="navigation-arrows">
+                    <button class="arrow-btn left-arrow" disabled>&leftarrow;</button>
+                    <button class="arrow-btn right-arrow">&rightarrow;</button>
+                </div>
+            </div>
 
+            <div class="tournament-list">
+
+                <div class="tournament-card finished">
+                    <div class="card-image-wrapper">
+                        <img src="placeholder-tft.jpg" alt="Teamfight Tactics" class="card-image">
+                        <div class="game-logo tft-logo">T</div>
+                    </div>
+                    <div class="card-content">
+                        <h4>NSOC 2025 - Đấu Trường Chân Lý</h4>
+                        <div class="info-row">
+                            <span class="label">Slots</span>
+                            <span class="value">4000/4000</span>
+                        </div>
+                        <div class="prize">
+                            <span class="cup-icon">🏆</span>
+                            <span>345,000,000 VND</span>
+                        </div>
+                        <div class="status finished-status">
+                            <span class="dot"></span>
+                            <span>Đã kết thúc</span>
+                        </div>
+                        <div class="schedule">
+                            <span class="date">11/09/2025 - 06/12/2025</span>
+                            <span class="location">Đấu Trường Chân Lý</span>
+                        </div>
+                        <button class="btn view-btn">Xem</button>
+                    </div>
+                </div>
+
+                <div class="tournament-card finished">
+                    <div class="card-image-wrapper">
+                        <img src="placeholder-valorant.jpg" alt="Valorant" class="card-image">
+                        <div class="game-logo valorant-logo">V</div>
+                    </div>
+                    <div class="card-content">
+                        <h4>NSOC 2025 - Valorant</h4>
+                        <div class="info-row">
+                            <span class="label">Slots</span>
+                            <span class="value">200/200</span>
+                        </div>
+                        <div class="prize">
+                            <span class="cup-icon">🏆</span>
+                            <span>540,000,000 VND</span>
+                        </div>
+                        <div class="status finished-status">
+                            <span class="dot"></span>
+                            <span>Đã kết thúc</span>
+                        </div>
+                        <div class="schedule">
+                            <span class="date">11/09/2025 - 06/12/2025</span>
+                            <span class="location">Valorant</span>
+                        </div>
+                        <button class="btn view-btn">Xem</button>
+                    </div>
+                </div>
+
+                <div class="tournament-card ongoing">
+                    <div class="card-image-wrapper">
+                        <img src="placeholder-netnennet.jpg" alt="Nét Nền Net Tournament" class="card-image">
+                        <div class="game-logo netnennet-logo">T</div>
+                    </div>
+                    <div class="card-content">
+                        <h4>Nét Nền Net Tournament Mùa 11</h4>
+                        <div class="info-row">
+                            <span class="label">Slots</span>
+                            <span class="value">139/139</span>
+                        </div>
+                        <div class="prize">
+                            <span class="cup-icon">🏆</span>
+                            <span>8,000,000 VND</span>
+                        </div>
+                        <div class="status">
+                            <span class="dot"></span>
+                            <span>Đã kết thúc</span>
+                        </div>
+                        <div class="schedule">
+                            <span class="date">12/11/2025 - 21/11/2025</span>
+                            <span class="location">Đấu Trường Chân Lý</span>
+                        </div>
+                        <button class="btn view-btn">Xem</button>
+                    </div>
+                </div>
+
+                <div class="tournament-card upcoming">
+                    <div class="card-image-wrapper">
+                        <img src="placeholder-giochomo.jpg" alt="Giờ Chợ Mở Mùa 7" class="card-image">
+                        <div class="game-logo giochomo-logo">TFF</div>
+                    </div>
+                    <div class="card-content">
+                        <h4>Giờ Chợ Mở Mùa 7</h4>
+                        <div class="info-row">
+                            <span class="label">Slots</span>
+                            <span class="value empty">0/20</span>
+                        </div>
+                        <div class="prize">
+                            <span class="cup-icon">🏆</span>
+                            <span>8,200,000 VND</span>
+                        </div>
+                        <div class="status upcoming-status">
+                            <span class="dot"></span>
+                            <span>Đợt Kích</span>
+                        </div>
+                        <div class="schedule">
+                            <span class="date">22/09/2025 - 28/09/2025</span>
+                            <span class="location">Đợt Kích</span>
+                        </div>
+                        <button class="btn register-btn">Đăng ký</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
     
  <!-- Footer -->
     <!-- Gradient từ đen sang tím trước footer -->
