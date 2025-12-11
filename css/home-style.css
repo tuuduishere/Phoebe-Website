@@ -302,249 +302,309 @@ body {
     /* để không có khoảng trắng nhỏ giữa video và gradient */
 }
 
-/* Section Container */
-.intro-section {
-    padding: 4rem 1.5rem;
-    max-width: 3000px;
-    margin: 0 auto;
-    text-align: center;
-    color: #e5e5e5;
-    background-color: #000000;
-    font-family: "Kelson Sans", sans-serif;
+/* Thiết lập chung */
+:root {
+    --bg-color: #1a1a1a;
+    --card-bg: #282828;
+    --text-color: #ffffff;
+    --primary-color: #007bff; /* Màu xanh dương cho đăng ký */
+    --gold-color: #ffcc00; /* Màu vàng cho cup */
+    --tft-color: #0087cb; /* Màu xanh dương TFT */
+    --valorant-color: #ff4655; /* Màu đỏ Valorant */
+    --netnennet-color: #f0f0f0; /* Màu trắng/xám nhẹ */
+    --giochomo-color: #ffaf00; /* Màu vàng cam */
 }
 
-/* Section Title */
-.intro-section h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #ffffff;
-    font-family:"Angas", sans-serif;
-}
-.intro-section .highlight {
-    color: #328396;
-}
-
-.intro-section > p {
-    font-size: 1.25rem;
-    color: #ffffff;
-    max-width: 1200px;
-    margin: 0 auto 3rem;
-    line-height: 1.8;
-}
-
-.features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-}
-
-.feature-item {
-    background-color: #ffffff;
-    padding: 2rem 1.5rem;
-    border-radius: 1rem;
-    width: 400px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.6s ease forwards;
-}
-
-.feature-item:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.feature-item:nth-child(3) {
-    animation-delay: 0.4s;
-}
-
-.feature-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 25px 50px #328396;
-}
-
-/* Icon */
-.icon {
-    font-size: 2.3rem;
-    margin-bottom: 1rem;
-    display: inline-block;
-}
-
-/* Headings */
-.feature-item h3 {
-    font-size: 2rem;
-    font-weight: 600;
-    font-family: "Angas", sans-serif;
-    color: #328396;
-    margin-bottom: 0.6rem;
-}
-
-/* Text */
-.feature-item p {
-    font-size: 1rem;
-    color: #000000;
-    line-height: 1.6;
-    font-weight: 600;
-}
-
-/* Animation */
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .features {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .intro-section h2 {
-        font-size: 2rem;
-    }
-
-    .feature-item {
-        width: 90%;
-    }
-}
-
-/* Why Choose Section */
-.why-choose-section {
-    background-color: #000000;
-    color: #ffffff;
-    padding: 4rem 1.5rem;
-    margin-bottom: 5rem;
-    font-family: "Kelson Sans", sans-serif;
-}
-
-.why-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-/* Section Title */
-.why-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    font-family: "Angas", sans-serif;
-    margin-bottom: 2rem;
-}
-
-.why-title .highlight {
-    color: #328396;
-}
-
-/* Bullet List - Clean Style */
-.why-list {
-    text-align: center;
-    max-width: 1000px;
-    margin: 2rem auto 0;
-    font-size: 1.25rem;
-    line-height: 1.8;
-    list-style: none;
+* {
+    box-sizing: border-box;
+    margin: 0;
     padding: 0;
-    color: #fff;
 }
 
-.why-list li {
+body {
+    font-family: Arial, sans-serif; /* Thay thế bằng font gốc nếu có */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Phần Header / Navigation Bar */
+.header {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.header-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    min-height: 120px;
+}
+
+.header-item:hover, .header-item.active {
+    background-color: var(--card-bg);
+}
+
+.header-item .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-    background: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.4rem;
-    transition: background 0.2s;
-}
-
-.why-list li:hover {
-    background: #328396;
-}
-
-/* Features Grid */
-.why-features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
     justify-content: center;
+    /* Dùng màu vòng tròn từ hình ảnh */
 }
 
-/* Feature Box */
-.why-feature-box {
-    background-color: #ffffff;
-    color: #000000;
-    border-radius: 1rem;
-    width: 400px;
-    padding: 2rem 1.5rem;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.6s ease forwards;
+/* Biểu tượng (Icon) Placeholder */
+.game-icon { border: 3px solid #00c7e2; }
+.cyber-icon { border: 3px solid #9900ff; }
+.esports-icon { border: 3px solid #0050ff; }
+.business-icon { border: 3px solid #00b0ff; }
+
+.header-item h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+    font-weight: bold;
 }
 
-.why-feature-box:nth-child(2) {
-    animation-delay: 0.2s;
+.header-item p {
+    font-size: 0.85em;
+    color: #b0b0b0;
 }
 
-.why-feature-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 25px 50px #328396;
+/* Phần Giải đấu nổi bật */
+.title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-/* Icon */
-.why-feature-box .icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    display: inline-block;
+.title-row h2 {
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
-/* Feature Heading */
-.why-feature-box h4 {
-    font-size: 2rem;
-    font-weight: 600;
-    font-family: "Angas", sans-serif;
-    color: #328396;
-    margin-bottom: 0.6rem;
+.navigation-arrows button {
+    background: none;
+    border: 1px solid #444;
+    color: var(--text-color);
+    font-size: 1.2em;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
-/* Feature Paragraph */
-.why-feature-box p {
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.6;
+.navigation-arrows button:hover:not(:disabled) {
+    background-color: #333;
 }
 
-/* Animation */
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
+.navigation-arrows button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Danh sách Card */
+.tournament-list {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Cho phép cuộn ngang nếu màn hình nhỏ */
+    padding-bottom: 10px; /* Thêm padding để scrollbar không che nội dung */
+}
+
+.tournament-card {
+    flex: 0 0 calc(25% - 15px); /* 4 card mỗi hàng */
+    max-width: 280px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-width: 250px; /* Đảm bảo card không quá nhỏ */
+}
+
+.card-image-wrapper {
+    position: relative;
+    height: 180px; /* Chiều cao cố định cho ảnh */
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.game-logo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: var(--text-color);
+    line-height: 1;
+}
+
+/* Logo Game Colors */
+.tft-logo { background-color: var(--tft-color); }
+.valorant-logo { background-color: var(--valorant-color); }
+.netnennet-logo { background-color: var(--netnennet-color); color: #000; font-size: 1.2em;}
+.giochomo-logo { background-color: var(--giochomo-color); font-size: 1em; }
+
+
+.card-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content h4 {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    height: 40px; /* Giữ chiều cao cố định để card không bị nhảy */
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    color: #b0b0b0;
+}
+
+.info-row .value {
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.info-row .value.empty {
+    color: var(--primary-color);
+}
+
+.prize {
+    color: var(--gold-color);
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.cup-icon {
+    margin-right: 5px;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    color: #b0b0b0;
+    margin-bottom: 10px;
+}
+
+.status .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #666; /* Màu xám cho đã kết thúc/mặc định */
+    margin-right: 5px;
+}
+
+.status.upcoming-status .dot {
+    background-color: var(--primary-color); /* Màu xanh dương cho sắp diễn ra */
+}
+
+.schedule {
+    font-size: 0.8em;
+    color: #b0b0b0;
+    margin-bottom: 15px;
+}
+
+.schedule .date {
+    display: block;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.schedule .location {
+    display: block;
+    font-style: italic;
+    color: #999;
+}
+
+/* Buttons */
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+    margin-top: auto; /* Đẩy nút xuống dưới cùng */
+}
+
+.view-btn {
+    background-color: #444;
+    color: var(--text-color);
+}
+
+.view-btn:hover {
+    background-color: #555;
+}
+
+.register-btn {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.register-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Placeholder for images/mock data */
+.card-image {
+    /* Đảm bảo ảnh nền cho placeholder */
+    background: linear-gradient(135deg, #333 0%, #111 100%);
+}
+
+/* Media Query cho màn hình nhỏ hơn */
+@media (max-width: 1024px) {
+    .tournament-card {
+        flex: 0 0 calc(33.333% - 13.333px); /* 3 card mỗi hàng */
     }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-    .why-title {
-        font-size: 2rem;
+    .header {
+        flex-wrap: wrap;
     }
-
-    .why-list {
-        font-size: 1rem;
-        padding-left: 1.5rem;
+    .header-item {
+        flex: 1 1 calc(50% - 10px); /* 2 cột trên di động */
     }
-
-    .why-feature-box {
-        width: 90%;
+    .tournament-list {
+        flex-wrap: nowrap;
     }
-
-    .why-features {
-        flex-direction: column;
-        align-items: center;
+    .tournament-card {
+        flex: 0 0 300px; /* Cố định chiều rộng và cho phép cuộn ngang */
     }
 }
 
