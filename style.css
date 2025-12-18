@@ -1,0 +1,539 @@
+/* =====================================
+   TASK 8: BASE STYLE VÀ RESET CSS
+   ===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+/* Container chung */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+/* =====================================
+   TASK 9: HEADER VỚI FLEXBOX
+   ===================================== */
+
+#main-header {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+#main-header h1 {
+    font-size: 28px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+#main-nav ul {
+    display: flex;
+    gap: 35px;
+}
+
+#main-nav a {
+    color: #333;
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+}
+
+#main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transition: width 0.3s ease;
+}
+
+#main-nav a:hover::after {
+    width: 100%;
+}
+
+#mobile-menu-btn {
+    display: none;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 24px;
+}
+
+/* HERO SECTION */
+
+#hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+}
+
+.hero-text h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-text p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    opacity: 0.95;
+}
+
+#signup-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#signup-form input[type="email"] {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#signup-form button {
+    padding: 15px 35px;
+    background: white;
+    color: #667eea;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#signup-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* =====================================
+   TASK 10: LƯỚI SẢN PHẨM VỚI CSS GRID
+   ===================================== */
+
+#products-grid {
+    background: white;
+}
+
+#products-grid h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+    color: #333;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+#products-grid h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.product-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* 
+   SHADOW VÀ BO GÓC
+    */
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.product-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    padding: 20px 20px 10px;
+    font-size: 22px;
+    color: #333;
+}
+
+.product-card p {
+    padding: 0 20px 20px;
+    color: #666;
+    font-size: 15px;
+}
+
+/* =====================================
+   TASK 14: HIỆU ỨNG HOVER
+   ===================================== */
+
+.btn-read-more {
+    display: inline-block;
+    margin: 0 20px 20px;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.btn-read-more:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* ABOUT US SECTION */
+
+
+#about-us {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    text-align: center;
+}
+
+#about-us h2 {
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+#about-us p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* TASK 12: ĐỊNH KIỂU FORM INPUT */
+
+#contact-section {
+    background: white;
+}
+
+#contact-section h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* TASK 11: FOOTER VỚI GRID */
+
+#main-footer {
+    background: #222;
+    color: #ccc;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 60px 20px 40px;
+}
+
+.footer-col h4 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-col p {
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    color: #ccc;
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.footer-col a:hover {
+    color: #667eea;
+}
+
+.social-icon {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    padding: 25px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copyright p {
+    font-size: 14px;
+}
+
+/* TASK 13: RESPONSIVE - MOBILE FIRST */
+
+@media (max-width: 768px) {
+
+    /* Header responsive */
+    #main-nav {
+        display: none;
+    }
+
+    #mobile-menu-btn {
+        display: block;
+    }
+
+    .header-content {
+        padding: 15px;
+    }
+
+    #main-header h1 {
+        font-size: 22px;
+    }
+
+    /* Hero responsive */
+    .hero-text h2 {
+        font-size: 32px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    #signup-form {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    #signup-form input[type="email"],
+    #signup-form button {
+        width: 100%;
+    }
+
+    /* Products Grid - 1 cột trên mobile */
+    .product-cards-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Section padding nhỏ hơn */
+    .section-padding {
+        padding: 50px 0;
+    }
+
+    #products-grid h2,
+    #contact-section h2,
+    #about-us h2 {
+        font-size: 30px;
+    }
+
+    /* Footer responsive */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 40px 20px 30px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .product-cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ANIMATIONS VÀ SMOOTH SCROLLING */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.product-card {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Smooth scroll cho toàn trang */
+html {
+    scroll-padding-top: 80px;
+}
+
+/* Loading animation cho images */
+img {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}

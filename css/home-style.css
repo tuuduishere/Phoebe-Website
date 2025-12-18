@@ -123,9 +123,11 @@ body {
     z-index: 50;
     color: black;
 }
+
 .nav .span {
     font-family: "Angas", sans-serif;
 }
+
 .nav-left {
     display: flex;
     align-items: center;
@@ -202,6 +204,235 @@ body {
     .nav-menu a:hover {
         background: #328396;
         color: #fff;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE FIRST
+   ======================================== */
+
+/* Mobile nhỏ (dưới 480px) */
+@media (max-width: 480px) {
+    body {
+        padding-top: 60px;
+    }
+
+    .navbar {
+        padding: 0.75rem 1rem;
+        flex-wrap: wrap;
+    }
+
+    .nav-left {
+        flex: 1;
+    }
+
+    .nav-left .title {
+        font-size: 1rem;
+        max-width: 120px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .logo {
+        height: 32px;
+        margin: 0 0.25rem;
+    }
+
+    .nav-buttons {
+        display: none;
+    }
+
+    .nav-left i {
+        font-size: 1.2rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+    /* Video container responsive */
+    .video-container {
+        width: 95%;
+        height: 150px;
+    }
+
+    /* Hero content */
+    .hero-content {
+        padding: 1rem;
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Container padding */
+    .container {
+        padding: 10px;
+    }
+
+    /* Header items (quick navigation) */
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header-item {
+        min-height: 80px;
+        padding: 10px;
+    }
+
+    .header-item h3 {
+        font-size: 0.95rem;
+    }
+
+    .header-item p {
+        font-size: 0.75rem;
+    }
+
+    /* Tournament cards */
+    .tournament-card {
+        flex: 0 0 280px;
+        min-width: 280px;
+    }
+
+    .card-image-wrapper {
+        height: 140px;
+    }
+
+    .card-content h4 {
+        font-size: 1rem;
+        height: auto;
+    }
+
+    .title-row h2 {
+        font-size: 1.2rem;
+    }
+
+    /* Gradient transition */
+    .gradient-transition {
+        height: 50px;
+    }
+}
+
+/* Mobile trung bình (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    body {
+        padding-top: 65px;
+    }
+
+    .navbar {
+        padding: 0.85rem 1rem;
+    }
+
+    .nav-buttons {
+        display: none;
+    }
+
+    .nav-left .title {
+        font-size: 1.1rem;
+    }
+
+    .logo {
+        height: 35px;
+    }
+
+    /* Video container */
+    .video-container {
+        width: 90%;
+        height: 180px;
+    }
+
+    /* Header items */
+    .header {
+        gap: 10px;
+    }
+
+    .header-item {
+        min-height: 100px;
+    }
+
+    /* Tournament cards */
+    .tournament-card {
+        flex: 0 0 280px;
+    }
+}
+
+/* Tablet (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .nav-buttons .btn-outline,
+    .nav-buttons .btn-primary {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .nav-menu {
+        gap: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .video-container {
+        width: 80%;
+        height: 200px;
+    }
+}
+
+/* ========================================
+   MOBILE MENU DROPDOWN
+   ======================================== */
+
+/* Mobile menu styles */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        border-top: 1px solid #eee;
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+        background: #328396;
+        color: #fff;
+    }
+
+    /* Dark theme mobile menu */
+    .navbar.dark-theme .nav-menu {
+        background: #1a1a1a;
+        border-top: 1px solid #333;
+    }
+
+    .navbar.dark-theme .nav-menu a {
+        color: #fff;
+    }
+
+    .navbar.dark-theme .nav-menu a:hover {
+        background: #328396;
+    }
+
+    /* Hamburger icon cursor */
+    .nav-left i {
+        cursor: pointer;
     }
 }
 
@@ -307,12 +538,18 @@ body {
     --bg-color: #1a1a1a;
     --card-bg: #282828;
     --text-color: #ffffff;
-    --primary-color: #007bff; /* Màu xanh dương cho đăng ký */
-    --gold-color: #ffcc00; /* Màu vàng cho cup */
-    --tft-color: #0087cb; /* Màu xanh dương TFT */
-    --valorant-color: #ff4655; /* Màu đỏ Valorant */
-    --netnennet-color: #f0f0f0; /* Màu trắng/xám nhẹ */
-    --giochomo-color: #ffaf00; /* Màu vàng cam */
+    --primary-color: #007bff;
+    /* Màu xanh dương cho đăng ký */
+    --gold-color: #ffcc00;
+    /* Màu vàng cho cup */
+    --tft-color: #0087cb;
+    /* Màu xanh dương TFT */
+    --valorant-color: #ff4655;
+    /* Màu đỏ Valorant */
+    --netnennet-color: #f0f0f0;
+    /* Màu trắng/xám nhẹ */
+    --giochomo-color: #ffaf00;
+    /* Màu vàng cam */
 }
 
 * {
@@ -322,7 +559,8 @@ body {
 }
 
 body {
-    font-family: Arial, sans-serif; /* Thay thế bằng font gốc nếu có */
+    font-family: Arial, sans-serif;
+    /* Thay thế bằng font gốc nếu có */
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
@@ -355,7 +593,8 @@ body {
     min-height: 120px;
 }
 
-.header-item:hover, .header-item.active {
+.header-item:hover,
+.header-item.active {
     background-color: var(--card-bg);
 }
 
@@ -371,10 +610,21 @@ body {
 }
 
 /* Biểu tượng (Icon) Placeholder */
-.game-icon { border: 3px solid #00c7e2; }
-.cyber-icon { border: 3px solid #9900ff; }
-.esports-icon { border: 3px solid #0050ff; }
-.business-icon { border: 3px solid #00b0ff; }
+.game-icon {
+    border: 3px solid #00c7e2;
+}
+
+.cyber-icon {
+    border: 3px solid #9900ff;
+}
+
+.esports-icon {
+    border: 3px solid #0050ff;
+}
+
+.business-icon {
+    border: 3px solid #00b0ff;
+}
 
 .header-item h3 {
     margin: 0 0 5px 0;
@@ -425,24 +675,29 @@ body {
 .tournament-list {
     display: flex;
     gap: 20px;
-    overflow-x: auto; /* Cho phép cuộn ngang nếu màn hình nhỏ */
-    padding-bottom: 10px; /* Thêm padding để scrollbar không che nội dung */
+    overflow-x: auto;
+    /* Cho phép cuộn ngang nếu màn hình nhỏ */
+    padding-bottom: 10px;
+    /* Thêm padding để scrollbar không che nội dung */
 }
 
 .tournament-card {
-    flex: 0 0 calc(25% - 15px); /* 4 card mỗi hàng */
+    flex: 0 0 calc(25% - 15px);
+    /* 4 card mỗi hàng */
     max-width: 280px;
     background-color: var(--card-bg);
     border-radius: 8px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    min-width: 250px; /* Đảm bảo card không quá nhỏ */
+    min-width: 250px;
+    /* Đảm bảo card không quá nhỏ */
 }
 
 .card-image-wrapper {
     position: relative;
-    height: 180px; /* Chiều cao cố định cho ảnh */
+    height: 180px;
+    /* Chiều cao cố định cho ảnh */
 }
 
 .card-image {
@@ -463,10 +718,24 @@ body {
 }
 
 /* Logo Game Colors */
-.tft-logo { background-color: var(--tft-color); }
-.valorant-logo { background-color: var(--valorant-color); }
-.netnennet-logo { background-color: var(--netnennet-color); color: #000; font-size: 1.2em;}
-.giochomo-logo { background-color: var(--giochomo-color); font-size: 1em; }
+.tft-logo {
+    background-color: var(--tft-color);
+}
+
+.valorant-logo {
+    background-color: var(--valorant-color);
+}
+
+.netnennet-logo {
+    background-color: var(--netnennet-color);
+    color: #000;
+    font-size: 1.2em;
+}
+
+.giochomo-logo {
+    background-color: var(--giochomo-color);
+    font-size: 1em;
+}
 
 
 .card-content {
@@ -480,7 +749,8 @@ body {
     font-size: 1.1em;
     font-weight: bold;
     margin-bottom: 10px;
-    height: 40px; /* Giữ chiều cao cố định để card không bị nhảy */
+    height: 40px;
+    /* Giữ chiều cao cố định để card không bị nhảy */
 }
 
 .info-row {
@@ -523,12 +793,14 @@ body {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background-color: #666; /* Màu xám cho đã kết thúc/mặc định */
+    background-color: #666;
+    /* Màu xám cho đã kết thúc/mặc định */
     margin-right: 5px;
 }
 
 .status.upcoming-status .dot {
-    background-color: var(--primary-color); /* Màu xanh dương cho sắp diễn ra */
+    background-color: var(--primary-color);
+    /* Màu xanh dương cho sắp diễn ra */
 }
 
 .schedule {
@@ -559,7 +831,8 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     transition: background-color 0.3s;
-    margin-top: auto; /* Đẩy nút xuống dưới cùng */
+    margin-top: auto;
+    /* Đẩy nút xuống dưới cùng */
 }
 
 .view-btn {
@@ -589,7 +862,8 @@ body {
 /* Media Query cho màn hình nhỏ hơn */
 @media (max-width: 1024px) {
     .tournament-card {
-        flex: 0 0 calc(33.333% - 13.333px); /* 3 card mỗi hàng */
+        flex: 0 0 calc(33.333% - 13.333px);
+        /* 3 card mỗi hàng */
     }
 }
 
@@ -597,128 +871,144 @@ body {
     .header {
         flex-wrap: wrap;
     }
+
     .header-item {
-        flex: 1 1 calc(50% - 10px); /* 2 cột trên di động */
+        flex: 1 1 calc(50% - 10px);
+        /* 2 cột trên di động */
     }
+
     .tournament-list {
         flex-wrap: nowrap;
     }
+
     .tournament-card {
-        flex: 0 0 300px; /* Cố định chiều rộng và cho phép cuộn ngang */
+        flex: 0 0 300px;
+        /* Cố định chiều rộng và cho phép cuộn ngang */
     }
 }
 
 /* Footer */
 /* Thiết lập chung */
-        body {
-            margin: 0;
-            font-family: 'Kelson Sans', sans-serif;
-            background-color: #f4f4f4; /* Nền trang */
-        }
+body {
+    margin: 0;
+    font-family: 'Kelson Sans', sans-serif;
+    background-color: #f4f4f4;
+    /* Nền trang */
+}
 
-        /* 1. Thiết lập Footer chính (Giống kích cỡ Nav bar) */
-        .compact-footer-dark {
-            background: linear-gradient(to bottom, #328396 0%, #000000 75%);
-            color: #ccc; /* Màu chữ xám nhạt */
-            padding: 15px 0; /* Rất ít padding để giữ kích thước nhỏ */
-            font-size: 13px;
-        }
+/* 1. Thiết lập Footer chính (Giống kích cỡ Nav bar) */
+.compact-footer-dark {
+    background: linear-gradient(to bottom, #328396 0%, #000000 75%);
+    color: #ccc;
+    /* Màu chữ xám nhạt */
+    padding: 15px 0;
+    /* Rất ít padding để giữ kích thước nhỏ */
+    font-size: 13px;
+}
 
-        /* 2. Container (Giữ nội dung ở giữa) */
-        .footer-container-narrow {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between; /* Đẩy hai bên ra xa */
-            align-items: center;
-        }
+/* 2. Container (Giữ nội dung ở giữa) */
+.footer-container-narrow {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    /* Đẩy hai bên ra xa */
+    align-items: center;
+}
 
-        /* 3. Phần bên Trái: Thương hiệu & Bản quyền */
-        .footer-left-content {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
+/* 3. Phần bên Trái: Thương hiệu & Bản quyền */
+.footer-left-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
-        .brand-group {
-            display: flex;
-            align-items: center;
-            /* Giống như hình ảnh bạn gửi: icon và tên cạnh nhau */
-        }
-        
-        .brand-group img {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px; /* Khoảng cách giữa icon và tên */
-            font-size: 1rem;
-        }
-        
-        .brand-name {
-            font-weight: 700;
-            font-size: 1rem;
-            letter-spacing: 1px;
-            font-family: "Angas", sans-serif;
-            color: #fff; /* Tên thương hiệu màu trắng */
-        }
+.brand-group {
+    display: flex;
+    align-items: center;
+    /* Giống như hình ảnh bạn gửi: icon và tên cạnh nhau */
+}
 
-        /* 4. Phần bên Phải: Liên kết & Mạng xã hội */
-        .footer-right-content {
-            display: flex;
-            align-items: center;
-            gap: 25px; /* Khoảng cách giữa các nhóm */
-        }
+.brand-group img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    /* Khoảng cách giữa icon và tên */
+    font-size: 1rem;
+}
 
-        /* 5. Liên kết */
-        .footer-links-inline a {
-            color: #ccc;
-            text-decoration: none;
-            margin-left: 15px; /* Khoảng cách giữa các liên kết */
-            transition: color 0.3s;
-        }
+.brand-name {
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-family: "Angas", sans-serif;
+    color: #fff;
+    /* Tên thương hiệu màu trắng */
+}
 
-        .footer-links-inline a:hover {
-            color: #4a90e2; /* Màu hover */
-        }
+/* 4. Phần bên Phải: Liên kết & Mạng xã hội */
+.footer-right-content {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    /* Khoảng cách giữa các nhóm */
+}
 
-        /* 6. Mạng xã hội */
-        .social-icons-compact a {
-            color: #ccc;
-            font-size: 14px;
-            margin-left: 10px;
-            transition: color 0.3s;
-        }
+/* 5. Liên kết */
+.footer-links-inline a {
+    color: #ccc;
+    text-decoration: none;
+    margin-left: 15px;
+    /* Khoảng cách giữa các liên kết */
+    transition: color 0.3s;
+}
 
-        .social-icons-compact a:hover {
-            color: #4a90e2;
-        }
+.footer-links-inline a:hover {
+    color: #4a90e2;
+    /* Màu hover */
+}
 
-        /* 7. Responsive (Cho điện thoại) */
-        @media (max-width: 768px) {
-            .footer-container-narrow {
-                flex-direction: column; /* Xếp chồng trên màn hình nhỏ */
-                text-align: center;
-                gap: 15px;
-            }
+/* 6. Mạng xã hội */
+.social-icons-compact a {
+    color: #ccc;
+    font-size: 14px;
+    margin-left: 10px;
+    transition: color 0.3s;
+}
 
-            .footer-left-content {
-                flex-direction: column; 
-                gap: 5px;
-            }
+.social-icons-compact a:hover {
+    color: #4a90e2;
+}
 
-            .footer-right-content {
-                flex-direction: column;
-                gap: 15px;
-            }
+/* 7. Responsive (Cho điện thoại) */
+@media (max-width: 768px) {
+    .footer-container-narrow {
+        flex-direction: column;
+        /* Xếp chồng trên màn hình nhỏ */
+        text-align: center;
+        gap: 15px;
+    }
 
-            .footer-links-inline {
-                /* Đặt các liên kết thành cột */
-                display: flex;
-                flex-direction: column;
-                gap: 5px;
-            }
+    .footer-left-content {
+        flex-direction: column;
+        gap: 5px;
+    }
 
-            .footer-links-inline a {
-                margin: 0; /* Bỏ margin ngang */
-            }
-        }
+    .footer-right-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer-links-inline {
+        /* Đặt các liên kết thành cột */
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .footer-links-inline a {
+        margin: 0;
+        /* Bỏ margin ngang */
+    }
+}

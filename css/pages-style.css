@@ -1,0 +1,1280 @@
+/* ========================================
+   PHOEBE PAGES - STYLES DÙNG CHUNG
+   File CSS cho các trang: Hoạt Động, Thành Tích, Thành Viên, Chiêu Mộ
+   ======================================== */
+
+/* Tiêu đề trang */
+.page-header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 60px 0 40px;
+    text-align: center;
+    margin-top: -30px;
+}
+
+.page-title {
+    font-family: "Angas", sans-serif;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.page-subtitle {
+    color: #b0b0b0;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Link đang active trong menu */
+.nav-menu a.active {
+    background: #328396;
+    color: #fff;
+}
+
+/* ========================================
+   TRANG HOẠT ĐỘNG
+   ======================================== */
+
+.activities-section {
+    padding: 40px 0;
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+/* Thẻ hoạt động */
+.activity-card {
+    background: #282828;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(50, 131, 150, 0.3);
+}
+
+/* Hình ảnh hoạt động */
+.activity-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.activity-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.activity-card:hover .activity-image img {
+    transform: scale(1.05);
+}
+
+/* Nhãn ngày tháng */
+.activity-date {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #328396;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.activity-date .day {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.activity-date .month {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+/* Nội dung thẻ hoạt động */
+.activity-content {
+    padding: 20px;
+}
+
+.activity-tag {
+    display: inline-block;
+    background: rgba(50, 131, 150, 0.2);
+    color: #328396;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.activity-content h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.activity-content p {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Thông tin bổ sung */
+.activity-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.activity-meta span i {
+    margin-right: 5px;
+    color: #328396;
+}
+
+/* Sự kiện sắp tới */
+.upcoming-section {
+    padding: 40px 0;
+}
+
+.upcoming-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.upcoming-item {
+    display: flex;
+    align-items: center;
+    background: #282828;
+    border-radius: 10px;
+    padding: 20px;
+    transition: background 0.3s;
+}
+
+.upcoming-item:hover {
+    background: #333;
+}
+
+.upcoming-date {
+    background: linear-gradient(135deg, #328396 0%, #276a7a 100%);
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 80px;
+    margin-right: 20px;
+}
+
+.upcoming-date .day {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.upcoming-date .month {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.upcoming-info {
+    flex: 1;
+}
+
+.upcoming-info h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.upcoming-info p {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.upcoming-info p i {
+    margin-right: 5px;
+    color: #328396;
+}
+
+/* ========================================
+   TRANG THÀNH TÍCH
+   ======================================== */
+
+/* Header trang thành tích */
+.achievements-header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d1f3d 100%);
+}
+
+/* Phần thống kê tổng quan */
+.stats-section {
+    background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
+    padding: 40px 0;
+    margin-top: -30px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Thẻ thống kê */
+.stat-card {
+    background: linear-gradient(135deg, #282828 0%, #1f1f1f 100%);
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    border: 1px solid #333;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: #328396;
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    color: #328396;
+    margin-bottom: 15px;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: #b0b0b0;
+    font-size: 0.95rem;
+}
+
+/* Phần danh sách thành tích */
+.achievements-section {
+    padding: 40px 0;
+}
+
+.achievement-year {
+    margin-bottom: 50px;
+}
+
+/* Tiêu đề năm */
+.year-title {
+    font-size: 2rem;
+    color: #328396;
+    margin-bottom: 25px;
+    padding-left: 20px;
+    border-left: 4px solid #328396;
+}
+
+.achievements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Thẻ thành tích */
+.achievement-card {
+    display: flex;
+    background: #282828;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.achievement-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Màu viền theo hạng giải */
+.achievement-card.gold {
+    border-left: 4px solid #ffcc00;
+}
+
+.achievement-card.silver {
+    border-left: 4px solid #c0c0c0;
+}
+
+.achievement-card.bronze {
+    border-left: 4px solid #cd7f32;
+}
+
+/* Huy chương */
+.achievement-ribbon {
+    font-size: 3rem;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Nội dung thành tích */
+.achievement-content {
+    flex: 1;
+    padding: 20px 25px;
+}
+
+.achievement-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.achievement-title h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.achievement-category {
+    background: rgba(50, 131, 150, 0.2);
+    color: #328396;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.achievement-content p {
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.achievement-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.achievement-details span i {
+    margin-right: 5px;
+    color: #328396;
+}
+
+/* ========================================
+   TRANG THÀNH VIÊN
+   ======================================== */
+
+/* Header trang thành viên */
+.members-header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #1f2d3d 100%);
+}
+
+.members-section {
+    padding: 40px 0;
+}
+
+/* Lưới Ban Chủ nhiệm */
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Thẻ lãnh đạo */
+.leader-card {
+    background: linear-gradient(135deg, #282828 0%, #1f1f1f 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.leader-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(50, 131, 150, 0.3);
+}
+
+/* Ảnh đại diện lãnh đạo */
+.leader-image {
+    position: relative;
+    padding: 30px 30px 0;
+}
+
+.leader-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #328396;
+}
+
+/* Nhãn chức danh */
+.leader-badge {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #328396 0%, #276a7a 100%);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Thông tin lãnh đạo */
+.leader-info {
+    padding: 30px 25px 25px;
+}
+
+.leader-info h3 {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.leader-role {
+    color: #328396;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.leader-description {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Liên kết mạng xã hội */
+.leader-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.leader-social a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #333;
+    border-radius: 50%;
+    color: #b0b0b0;
+    transition: background 0.3s, color 0.3s;
+}
+
+.leader-social a:hover {
+    background: #328396;
+    color: #fff;
+}
+
+/* Lưới thành viên */
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* Thẻ thành viên */
+.member-card {
+    background: #282828;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    background: #333;
+}
+
+.member-avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #328396;
+}
+
+.member-info h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.member-role {
+    color: #328396;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* Nhãn kỹ năng */
+.member-skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tag {
+    background: rgba(50, 131, 150, 0.15);
+    color: #328396;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+/* Khối kêu gọi tham gia */
+.join-cta {
+    background: linear-gradient(135deg, #328396 0%, #276a7a 100%);
+    border-radius: 20px;
+    padding: 50px;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.cta-content h3 {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.cta-content p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 25px;
+}
+
+/* ========================================
+   TRANG CHIÊU MỘ / TUYỂN DỤNG
+   ======================================== */
+
+/* Header trang chiêu mộ */
+.recruitment-header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #3d1f2d 100%);
+}
+
+/* Banner tuyển dụng */
+.recruitment-banner {
+    background: linear-gradient(135deg, #282828 0%, #1f1f1f 100%);
+    border-radius: 20px;
+    padding: 40px;
+    margin: -60px auto 40px;
+    position: relative;
+    z-index: 10;
+    border: 1px solid #333;
+}
+
+.banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.banner-text {
+    flex: 1;
+}
+
+/* Nhãn trạng thái */
+.banner-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff4655 0%, #ff6b75 100%);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    animation: pulse 2s infinite;
+}
+
+/* Hiệu ứng nhấp nháy */
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.banner-text h2 {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.banner-text p {
+    color: #b0b0b0;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Thông báo hạn chót */
+.banner-deadline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 204, 0, 0.1);
+    color: #ffcc00;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+}
+
+.banner-deadline i {
+    font-size: 1.1rem;
+}
+
+/* Thống kê tuyển dụng */
+.banner-stats {
+    display: flex;
+    gap: 30px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px 30px;
+    background: rgba(50, 131, 150, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(50, 131, 150, 0.3);
+}
+
+.stat-item .stat-num {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #328396;
+}
+
+.stat-item .stat-text {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+}
+
+/* Phần vị trí tuyển dụng */
+.positions-section {
+    padding: 40px 0;
+}
+
+.positions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+/* Thẻ vị trí */
+.position-card {
+    background: #282828;
+    border-radius: 15px;
+    padding: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid transparent;
+}
+
+.position-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(50, 131, 150, 0.2);
+    border-color: #328396;
+}
+
+/* Icon vị trí */
+.position-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #328396 0%, #276a7a 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.position-content h3 {
+    color: #fff;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.position-content>p {
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Yêu cầu vị trí */
+.position-requirements h5 {
+    color: #328396;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.position-requirements ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.position-requirements li {
+    color: #888;
+    font-size: 0.9rem;
+    padding: 5px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.position-requirements li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #328396;
+}
+
+/* Số lượng vị trí */
+.position-slots {
+    color: #ffcc00;
+    font-size: 0.9rem;
+}
+
+.position-slots i {
+    margin-right: 5px;
+}
+
+/* Phần quyền lợi */
+.benefits-section {
+    padding: 40px 0;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* Thẻ quyền lợi */
+.benefit-item {
+    background: #282828;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, rgba(50, 131, 150, 0.2) 0%, rgba(50, 131, 150, 0.1) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.8rem;
+    color: #328396;
+}
+
+.benefit-item h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.benefit-item p {
+    color: #888;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Phần form đăng ký */
+.apply-section {
+    padding: 40px 0;
+}
+
+.apply-form-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.apply-form {
+    background: #282828;
+    border-radius: 20px;
+    padding: 40px;
+}
+
+/* Hàng form 2 cột */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Nhóm form */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    color: #fff;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.form-group .required {
+    color: #ff4655;
+}
+
+/* Input và textarea */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    background: #1a1a1a;
+    border: 1px solid #444;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #328396;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #666;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Nút gửi đơn */
+.submit-btn {
+    width: 100%;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #328396 0%, #276a7a 100%);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(50, 131, 150, 0.4);
+}
+
+.submit-btn i {
+    margin-right: 10px;
+}
+
+/* Phần liên hệ */
+.contact-section {
+    padding: 40px 0;
+}
+
+.contact-content {
+    background: linear-gradient(135deg, #282828 0%, #1f1f1f 100%);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+}
+
+.contact-content h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-content>p {
+    color: #b0b0b0;
+    margin-bottom: 25px;
+}
+
+/* Liên kết liên hệ */
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #333;
+    padding: 15px 25px;
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.contact-link:hover {
+    background: #328396;
+}
+
+.contact-link i {
+    font-size: 1.2rem;
+}
+
+/* ========================================
+   RESPONSIVE - TƯƠNG THÍCH MÀN HÌNH NHỎ
+   ======================================== */
+
+@media (max-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .banner-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .banner-stats {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 1.8rem;
+    }
+
+    .activities-grid,
+    .positions-grid,
+    .benefits-grid,
+    .members-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .stat-card {
+        padding: 20px 15px;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-card {
+        flex-direction: column;
+    }
+
+    .achievement-ribbon {
+        padding: 15px;
+    }
+
+    .recruitment-banner {
+        margin-top: -40px;
+        padding: 25px;
+    }
+
+    .banner-text h2 {
+        font-size: 1.4rem;
+    }
+
+    .apply-form {
+        padding: 25px;
+    }
+
+    .leadership-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .join-cta {
+        padding: 30px 20px;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .upcoming-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .upcoming-date {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    /* Page header responsive nhỏ */
+    .page-header {
+        padding: 40px 0 30px;
+    }
+
+    .page-title {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .page-subtitle {
+        font-size: 0.95rem;
+        padding: 0 15px;
+    }
+
+    /* Title row responsive */
+    .title-row {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .title-row h2 {
+        font-size: 1.2rem;
+    }
+
+    /* Leader card nhỏ hơn */
+    .leader-image {
+        padding: 20px 20px 0;
+    }
+
+    .leader-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .leader-badge {
+        font-size: 0.75rem;
+        padding: 6px 15px;
+    }
+
+    .leader-info {
+        padding: 25px 20px 20px;
+    }
+
+    .leader-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .leader-description {
+        font-size: 0.85rem;
+    }
+
+    /* Member card nhỏ hơn */
+    .member-card {
+        padding: 20px;
+    }
+
+    .member-avatar img {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Join CTA nhỏ hơn */
+    .join-cta {
+        padding: 25px 15px;
+        margin: 30px 0;
+        border-radius: 15px;
+    }
+
+    .cta-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .cta-content p {
+        font-size: 0.9rem;
+    }
+
+    /* Activity cards */
+    .activity-image {
+        height: 160px;
+    }
+
+    .activity-content h3 {
+        font-size: 1.05rem;
+    }
+
+    /* Position cards */
+    .position-card {
+        padding: 20px;
+    }
+
+    .position-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .position-content h3 {
+        font-size: 1.1rem;
+    }
+
+    /* Apply form */
+    .apply-form {
+        padding: 20px 15px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    /* Benefit items */
+    .benefit-item {
+        padding: 20px 15px;
+    }
+
+    .benefit-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 1.5rem;
+    }
+
+    /* Contact section */
+    .contact-content {
+        padding: 25px 15px;
+    }
+
+    .contact-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .contact-link {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* Achievement cards */
+    .year-title {
+        font-size: 1.5rem;
+        padding-left: 15px;
+    }
+
+    .achievement-ribbon {
+        font-size: 2rem;
+        padding: 10px;
+    }
+
+    .achievement-content {
+        padding: 15px;
+    }
+
+    .achievement-title h4 {
+        font-size: 1rem;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    .register-btn {
+        width: 100%;
+    }
+}
+
+/* ========================================
+   ADDITIONAL MOBILE IMPROVEMENTS
+   ======================================== */
+
+/* Smooth scrolling cho mobile */
+@media (max-width: 768px) {
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Touch-friendly buttons */
+    .btn,
+    .register-btn,
+    .submit-btn,
+    .contact-link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Improved touch targets */
+    .skill-tag {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+
+    .activity-meta span {
+        padding: 4px 0;
+    }
+
+    /* Better spacing for content */
+    .members-section,
+    .activities-section,
+    .achievements-section,
+    .positions-section,
+    .benefits-section {
+        padding: 30px 0;
+    }
+
+    /* Fix for fixed navbar spacing */
+    body {
+        padding-top: 70px;
+    }
+}
