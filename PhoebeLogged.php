@@ -24,11 +24,11 @@
   </div>
   <ul class="nav-menu">
     <li><a href="PhoebeLanding.php">TRANG CHỦ</a></li>
-    <li><a href="#">HOẠT ĐỘNG</a></li>
-    <li><a href="#">THÀNH TÍCH</a></li>
-    <li><a href="#">MERCHANDISE</a></li>
-    <li><a href="#">THÀNH VIÊN</a></li>
-    <li><a href="#">THÔNG BÁO CHIÊU MỘ</a></li>
+    <li><a href="hoat-dong.html">HOẠT ĐỘNG</a></li>
+    <li><a href="thanh-tich.html">THÀNH TÍCH</a></li>
+    <li><a href="merchandise-page.html">MERCHANDISE</a></li>
+    <li><a href="thanh-vien.html">THÀNH VIÊN</a></li>
+    <li><a href="chieu-mo.html">THÔNG BÁO CHIÊU MỘ</a></li>
   </ul>
   <div class="nav-buttons">
     <button class="btn-outline">PROJECT</button>
