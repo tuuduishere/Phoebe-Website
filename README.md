@@ -28,11 +28,13 @@ Tạo PR ở trên GitHub hoặc Terminal.
 | Họ Tên  | Vai trò | Dev Type |
 | ------------- | ------------- | ------------- | 
 | Võ Lê Chí Dũng  | Head Project  | Full-Stack Dev |
-| Unknown  | ???  | ??? |
+| Doãn Bá Trí  | Contributer  | Front-end Developer |
 | Unknown  | ???  | ??? |
 | Unknown  | ???  | ??? |
 
 ## Cách làm việc
+
+Không ``` git init ``` ở local trước khi clone tránh tình trạng unrelated commit history. Chủ thớt fix conflict lòi le!!!
 
 Pull request miễn phí nên code đc tính năng gì hay hoặc fix đc bug nào thì tạo 1 cái. Ib riêng cho chủ thớt để tiến hành merge code rồi test (contributor hay collaborator phải test ở máy trước khi tạo pull request, thằng chủ chỉ test lại, kh fix lỗi hộ hoặc nhận code lỗi).
 
