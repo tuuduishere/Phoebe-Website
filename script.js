@@ -76,3 +76,17 @@ if (whiteBlock) {
 }
 
 console.log("Phoebe Landing Page Loaded");
+function toggleDropdown() {
+    const menu = document.getElementById('userDropdownMenu');
+    menu.classList.toggle('hidden');
+}
+
+// Đóng menu nếu người dùng click ra ngoài khu vực dropdown
+window.onclick = function(event) {
+    if (!event.target.closest('#userDropdownContainer')) {
+        const menu = document.getElementById('userDropdownMenu');
+        if (menu && !menu.classList.contains('hidden')) {
+            menu.classList.add('hidden');
+        }
+    }
+}

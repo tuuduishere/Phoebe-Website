@@ -1,3 +1,8 @@
+<?php
+session_start();
+$isLoggedIn = isset($_SESSION['id']) && isset($_SESSION['name']);
+$userName = $isLoggedIn ? $_SESSION['name'] : '';
+?>
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -23,16 +28,25 @@
         </div>
         <ul class="nav-menu">
             <li><a href="PhoebeLanding.php">TRANG CHỦ</a></li>
-            <li><a href="hoat-dong.html">HOẠT ĐỘNG</a></li>
-            <li><a href="thanh-tich.html">THÀNH TÍCH</a></li>
-            <li><a href="merchandise-page.html">MERCHANDISE</a></li>
-            <li><a href="thanh-vien.html">THÀNH VIÊN</a></li>
-            <li><a href="chieu-mo.html" class="active">THÔNG BÁO CHIÊU MỘ</a></li>
+            <li><a href="hoat-dong.php">HOẠT ĐỘNG</a></li>
+            <li><a href="thanh-tich.php">THÀNH TÍCH</a></li>
+            <li><a href="merchandise-page.php">MERCHANDISE</a></li>
+            <li><a href="thanh-vien.php">THÀNH VIÊN</a></li>
+            <li><a href="chieu-mo.php" class="active">THÔNG BÁO CHIÊU MỘ</a></li>
         </ul>
-        <div class="nav-buttons">
-            <button class="btn-outline">Hội cựu học sinh CLB</button>
-            <button class="btn-primary" onclick="window.location.href='login.php'">PHOEBE ID</button>
+        <div class="nav-buttons flex items-center gap-4">
+    <button class="btn-outline">Hội cựu học sinh CLB</button>
+    
+    <?php if ($isLoggedIn): ?>
+        <div class="flex items-center gap-2 bg-[#328396] px-4 py-2 rounded-lg cursor-pointer" 
+             onclick="window.location.href='profile.php'">
+            <i class="fa-solid fa-circle-user"></i>
+            <span>Xin chào, <?php echo htmlspecialchars($userName); ?></span>
         </div>
+    <?php else: ?>
+        <button class="btn-primary" onclick="window.location.href='login.php'">PHOEBE ID</button>
+    <?php endif; ?>
+</div>
     </nav>
 
     <div style="width:100%;min-height:80px;background:#fff;position:relative;top:-30px;z-index:2;"></div>

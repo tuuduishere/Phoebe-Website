@@ -1,0 +1,50 @@
+/* Fonts */
+@font-face {
+    font-family: "Angas";
+    src: url("../fonts/angas/angas v3 bold.otf"); /* Đảm bảo đường dẫn này đúng với thư mục font của bạn */
+}
+
+.font-angas {
+    font-family: "Angas", sans-serif;
+}
+
+/* Hiệu ứng thẻ thành viên (Digital ID Card) */
+.id-card {
+    background: linear-gradient(135deg, #328396 0%, #000000 100%);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.id-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(50, 131, 150, 0.3);
+}
+
+.id-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    transform: rotate(30deg);
+    pointer-events: none;
+}
+
+/* Tùy chỉnh thanh cuộn cho input date/select trên trình duyệt ẩn */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Làm icon lịch màu trắng để hợp với theme tối */
+    cursor: pointer;
+}
+
+/* Hiệu ứng cho các ô nhập liệu */
+input, select {
+    transition: all 0.3s ease !important;
+}
+
+input:focus, select:focus {
+    box-shadow: 0 0 0 2px rgba(50, 131, 150, 0.5);
+}
