@@ -1,5 +1,8 @@
 <?php
-// PhoebeLanding.php
+session_start();
+// Kiểm tra xem người dùng đã đăng nhập chưa
+$isLoggedIn = isset($_SESSION['id']) && isset($_SESSION['name']);
+$userName = $isLoggedIn ? $_SESSION['name'] : '';
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -25,16 +28,41 @@
   </div>
   <ul class="nav-menu">
     <li><a href="PhoebeLanding.php">TRANG CHỦ</a></li>
-    <li><a href="hoat-dong.html">HOẠT ĐỘNG</a></li>
-    <li><a href="thanh-tich.html">THÀNH TÍCH</a></li>
-    <li><a href="merchandise-page.html">MERCHANDISE</a></li>
-    <li><a href="thanh-vien.html">THÀNH VIÊN</a></li>
-    <li><a href="chieu-mo.html">THÔNG BÁO CHIÊU MỘ</a></li>
+    <li><a href="hoat-dong.php">HOẠT ĐỘNG</a></li>
+    <li><a href="thanh-tich.php">THÀNH TÍCH</a></li>
+    <li><a href="merchandise-page.php">MERCHANDISE</a></li>
+    <li><a href="thanh-vien.php">THÀNH VIÊN</a></li>
+    <li><a href="chieu-mo.php">THÔNG BÁO CHIÊU MỘ</a></li>
   </ul>
-  <div class="nav-buttons">
+  <div class="nav-buttons flex items-center gap-4">
     <button class="btn-outline">Hội cựu học sinh CLB</button>
-    <button class="btn-primary" onclick="window.location.href='login.php'">PHOEBE ID</button>
-  </div>
+    
+    <?php if ($isLoggedIn): ?>
+        <div class="relative inline-block text-left" id="userDropdownContainer">
+            <div class="flex items-center gap-2 bg-[#328396] hover:bg-[#256675] px-4 py-2 rounded-lg transition-all cursor-pointer border border-white/20" 
+                 onclick="toggleDropdown()">
+                <i class="fa-solid fa-circle-user text-xl"></i>
+                <span class="text-sm font-semibold whitespace-nowrap">
+                    Xin chào, <?php echo htmlspecialchars($userName); ?>
+                </span>
+                <i class="fa-solid fa-chevron-down text-xs ml-1"></i>
+            </div>
+
+            <div id="userDropdownMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-[1100] border border-gray-200">
+                <a href="profile.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 border-b border-gray-100">
+                    <i class="fa-solid fa-id-card mr-2"></i> Thông tin cá nhân
+                </a>
+                <a href="logout.php" class="block px-4 py-2 text-sm text-red-600 hover:bg-red-50">
+                    <i class="fa-solid fa-right-from-bracket mr-2"></i> Đăng xuất
+                </a>
+            </div>
+        </div>
+    <?php else: ?>
+        <button class="btn-primary" onclick="window.location.href='login.php'">
+            PHOEBE ID
+        </button>
+    <?php endif; ?>
+</div>
 </nav>
 
         <div style="width:100%;min-height:80px;background:#fff;position:relative;top:-30px;z-index:2;"></div>

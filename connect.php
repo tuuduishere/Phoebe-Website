@@ -2,7 +2,7 @@
 $host = 'localhost';
 $user = 'root';
 $pass = ''; // điền nếu bạn có mật khẩu
-$dbname = 'phoebedb';
+$dbname = 'clb_manager';
 
 $conn = new mysqli($host, $user, $pass, $dbname);
 
