@@ -35,6 +35,22 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
     <li><a href="chieu-mo.php">THÔNG BÁO CHIÊU MỘ</a></li>
   </ul>
   <div class="nav-buttons flex items-center gap-4">
+    <!-- Language Selector -->
+    <div class="relative inline-block" id="langDropdownContainer">
+        <button class="flex items-center gap-1 px-3 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-100 transition-all" onclick="toggleLangDropdown()">
+            <i class="fa-solid fa-globe"></i>
+            <span id="currentLang">VI</span>
+            <i class="fa-solid fa-chevron-down text-xs"></i>
+        </button>
+        <div id="langDropdownMenu" class="hidden absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg py-1 z-[1100] border border-gray-200">
+            <a href="?lang=vi" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <span class="mr-2">🇻🇳</span> Tiếng Việt
+            </a>
+            <a href="?lang=en" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <span class="mr-2">🇬🇧</span> English
+            </a>
+        </div>
+    </div>
     <button class="btn-outline">Hội cựu học sinh CLB</button>
     
     <?php if ($isLoggedIn): ?>
@@ -51,6 +67,9 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
             <div id="userDropdownMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-[1100] border border-gray-200">
                 <a href="profile.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 border-b border-gray-100">
                     <i class="fa-solid fa-id-card mr-2"></i> Thông tin cá nhân
+                </a>
+                <a href="cap-lai-the.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 border-b border-gray-100">
+                    <i class="fa-solid fa-credit-card mr-2"></i> Cấp lại thẻ thành viên
                 </a>
                 <a href="logout.php" class="block px-4 py-2 text-sm text-red-600 hover:bg-red-50">
                     <i class="fa-solid fa-right-from-bracket mr-2"></i> Đăng xuất

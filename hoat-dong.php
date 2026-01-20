@@ -49,7 +49,7 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
 </div>
     </nav>
 
-    <div style="width:100%;min-height:80px;background:#fff;position:relative;top:-30px;z-index:2;"></div>
+    <div id="white-block" style="width:100%;min-height:80px;background:#fff;position:relative;top:-30px;z-index:2;"></div>
 
     <!-- Tiêu đề trang -->
     <section class="page-header">
