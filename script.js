@@ -13,10 +13,10 @@ const navMenu = document.querySelector('.nav-menu');
 
 // Toggle menu khi click vào hamburger icon
 if (hamburgerIcon && navMenu) {
-    hamburgerIcon.addEventListener('click', function(e) {
+    hamburgerIcon.addEventListener('click', function (e) {
         e.stopPropagation();
         navMenu.classList.toggle('active');
-        
+
         // Thay đổi icon khi menu mở/đóng
         if (navMenu.classList.contains('active')) {
             this.classList.remove('fa-bars-staggered');
@@ -28,7 +28,7 @@ if (hamburgerIcon && navMenu) {
     });
 
     // Đóng menu khi click bên ngoài
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         if (!navMenu.contains(e.target) && !hamburgerIcon.contains(e.target)) {
             navMenu.classList.remove('active');
             hamburgerIcon.classList.remove('fa-xmark');
@@ -39,7 +39,7 @@ if (hamburgerIcon && navMenu) {
     // Đóng menu khi click vào một link trong menu
     const menuLinks = navMenu.querySelectorAll('a');
     menuLinks.forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function () {
             navMenu.classList.remove('active');
             hamburgerIcon.classList.remove('fa-xmark');
             hamburgerIcon.classList.add('fa-bars-staggered');
@@ -48,9 +48,25 @@ if (hamburgerIcon && navMenu) {
 }
 
 // ========================================
-// NAVBAR THEME OBSERVER
+// NAVBAR THEME - SCROLL BASED
+// Trang: den khi cuon xuong, trang o dau trang
 // ========================================
 
+// Nguong scroll de doi theme (pixels)
+const SCROLL_THRESHOLD = 100;
+
+// Ham xu ly scroll cho cac trang KHONG co white-block
+function handleScrollTheme() {
+    if (!navbar) return;
+
+    if (window.scrollY > SCROLL_THRESHOLD) {
+        navbar.classList.add('dark-theme');
+    } else {
+        navbar.classList.remove('dark-theme');
+    }
+}
+
+// IntersectionObserver cho Landing page (co white-block)
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (!entry.isIntersecting) {
@@ -59,20 +75,29 @@ const observer = new IntersectionObserver((entries) => {
             navbar.classList.remove('dark-theme');
         }
     });
-}, { threshold: 0.8 });
+}, { threshold: 0.5 });
+
 function openNfcPopup() {
-    // Kiểm tra xem thiết bị có hỗ trợ NFC không
+    // Kiem tra xem thiet bi co ho tro NFC khong
     if ('NFC' in window) {
-    // Mở cửa sổ pop up cho quét thẻ
-    alert('Mở cửa sổ quét thẻ NFC...'); // Thay thế bằng mã mở pop up thực tế
+        // Mo cua so pop up cho quet the
+        alert('Mo cua so quet the NFC...'); // Thay the bang ma mo pop up thuc te
     } else {
-    alert('Thiết bị không hỗ trợ NFC.');
+        alert('Thiet bi khong ho tro NFC.');
     }
 }
 
-// Chỉ observe nếu whiteBlock tồn tại
+// Chon phuong thuc dua tren trang
 if (whiteBlock) {
+    // Landing page: dung IntersectionObserver
+    console.log("Navbar Theme: Using IntersectionObserver with white-block");
     observer.observe(whiteBlock);
+} else if (navbar) {
+    // Cac trang khac: dung scroll event
+    console.log("Navbar Theme: white-block not found, using scroll fallback");
+    window.addEventListener('scroll', handleScrollTheme, { passive: true });
+    // Chay 1 lan khi load de set trang thai ban dau
+    handleScrollTheme();
 }
 
 console.log("Phoebe Landing Page Loaded");
@@ -82,11 +107,26 @@ function toggleDropdown() {
 }
 
 // Đóng menu nếu người dùng click ra ngoài khu vực dropdown
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (!event.target.closest('#userDropdownContainer')) {
         const menu = document.getElementById('userDropdownMenu');
         if (menu && !menu.classList.contains('hidden')) {
             menu.classList.add('hidden');
         }
+    }
+    // Close language dropdown when clicking outside
+    if (!event.target.closest('#langDropdownContainer')) {
+        const langMenu = document.getElementById('langDropdownMenu');
+        if (langMenu && !langMenu.classList.contains('hidden')) {
+            langMenu.classList.add('hidden');
+        }
+    }
+}
+
+// Language Dropdown Toggle
+function toggleLangDropdown() {
+    const menu = document.getElementById('langDropdownMenu');
+    if (menu) {
+        menu.classList.toggle('hidden');
     }
 }

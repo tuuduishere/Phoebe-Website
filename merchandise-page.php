@@ -13,6 +13,7 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
   <script src="https://kit.fontawesome.com/0880e589c1.js" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body>
 <!-- Navbar -->
 <nav class="navbar" id="navbar">
   <div class="nav-left">
@@ -42,8 +43,7 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
     <?php endif; ?>
 </div>
 </nav>
-
-<body>
+<div id="white-block" style="width:100%;min-height:80px;background:#fff;position:relative;top:-30px;z-index:2;"></div>
   <h1>MERCHANDISE</h1>
   <!-- Thẻ bài sản phẩm -->
   <div class="product">
@@ -77,4 +77,5 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
 
 
 
+<script src="script.js"></script>
 </body>
