@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2026 at 10:47 AM
+-- Generation Time: Jan 21, 2026 at 01:24 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -24,6 +24,51 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `accounts`
+--
+
+CREATE TABLE `accounts` (
+  `ma_dinh_danh` char(6) NOT NULL,
+  `password` varchar(255) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `accounts`
+--
+
+INSERT INTO `accounts` (`ma_dinh_danh`, `password`) VALUES
+('050401', '1'),
+('060401', '1'),
+('060402', '1'),
+('060403', '1'),
+('060404', '1'),
+('060405', '1'),
+('070401', '1'),
+('070402', '1'),
+('070403', '1'),
+('080101', '1'),
+('080102', '1'),
+('080103', '1'),
+('080104', '1'),
+('080105', '1'),
+('080201', '1'),
+('080301', '1'),
+('090001', '1'),
+('090002', '1'),
+('090101', '1'),
+('090102', '1'),
+('090103', '1'),
+('090104', '1'),
+('100101', '1'),
+('100102', '1'),
+('100201', '1'),
+('100202', '1'),
+('100203', '1'),
+('100204', '1');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `members`
 --
 
@@ -35,46 +80,54 @@ CREATE TABLE `members` (
   `nam_sinh` year(4) NOT NULL,
   `ban` enum('Ban điều hành','Ban thi đấu','Ban truyền thông','Ban thiết kế','Cựu học sinh') NOT NULL,
   `gmail` varchar(100) DEFAULT NULL,
-  `link_fb` varchar(255) DEFAULT NULL
+  `link_fb` varchar(255) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `members`
 --
 
-INSERT INTO `members` (`ma_dinh_danh`, `ho_ten`, `gioi_tinh`, `ngay_sinh`, `nam_sinh`, `ban`, `gmail`, `link_fb`) VALUES
-('050401', 'Võ Lê Chí Dũng', 'Nam', '2005-05-16', '2005', 'Cựu học sinh', 'volechidung@gmail.com', 'fb.com/chi.dung.1605'),
-('060401', 'Nguyễn Cao Xuân Trung', 'Nam', '2006-04-27', '2006', 'Cựu học sinh', 'godhander274@gmail.com', 'https://www.facebook.com/xuantrung274/'),
-('060402', 'Trần Thiên Phú', 'Nam', '2006-03-28', '2006', 'Cựu học sinh', 'Tranthienphu2803@gmail.com', 'https://www.facebook.com/Oken.283/'),
-('060403', 'Phạm Phúc Thịnh', 'Nam', '2006-01-01', '2006', 'Cựu học sinh', 'thinhphamapt@gmail.com', 'https://www.facebook.com/thinhDI01'),
-('060404', 'Nguyễn Minh Phúc', 'Nam', '2006-07-14', '2006', 'Cựu học sinh', 'manhduonglhp3@gmail.com', 'https://www.facebook.com/share/1AWRuZpr3j/?mibextid=wwXIfr'),
-('060405', 'Doãn Bá Nhật', 'Nam', '2006-02-03', '2006', 'Cựu học sinh', 'doanbanhat0302@gmail.com', 'https://www.facebook.com/share/17Tey1LqYP/?mibextid=wwXIfr'),
-('070401', 'Trương Thái Khang Duy', 'Nam', '2007-03-06', '2007', 'Cựu học sinh', 'khangduytruong1@gmail.com', 'https://www.facebook.com/share/1AoAzC5dHx/'),
-('070402', 'Trương Thái Kha Duy', 'Nam', '2007-03-06', '2007', 'Cựu học sinh', 'khaduytruong207@gmail.com', 'https://www.facebook.com/share/17WdWLYcbM/'),
-('070403', 'Nguyễn Bảo Long', 'Nam', '2007-11-17', '2007', 'Cựu học sinh', 'noir171127@gmail.com', 'https://www.facebook.com/longnguyen171127'),
-('080101', 'Doãn Bá Trí', 'Nam', '2008-07-15', '2008', 'Ban thi đấu', 'doanbatri.it@gmail.com', 'https://www.facebook.com/tridev157'),
-('080102', 'Nguyễn Thị Kim Ngân', 'Nữ', '2008-08-19', '2008', 'Ban thi đấu', 'ngkngan1908@gmail.com', 'https://www.facebook.com/share/176D1ypFY4/'),
-('080103', 'Phạm Hải Đăng', 'Nam', '2008-12-16', '2008', 'Ban thi đấu', 'dangpham.161208@gmail.com', 'https://www.facebook.com/ankdenbien12/'),
-('080104', 'Võ Minh Khánh', 'Nam', '2008-06-01', '2008', 'Ban thi đấu', 'minhkhanh070640@gmail.com', 'https://www.facebook.com/share/17uZEkT6HQ/'),
-('080105', 'Phan Nguyễn Như Ngọc', 'Nữ', '2008-09-30', '2008', 'Ban thi đấu', 'nhungoc300908@gmail.com', 'https://www.facebook.com/share/17iZpbDmYw/'),
-('080201', 'Phan Thị Thảo My', 'Nữ', '2008-08-07', '2008', 'Ban truyền thông', 'myphan7878@gmail.com', 'https://www.facebook.com/share/1brVGntGwf/'),
-('080301', 'Nguyễn Ngọc Thảo Như', 'Nữ', '2008-10-09', '2008', 'Ban thiết kế', 'nguyenngocthaonhu910@gmail.com', 'https://www.facebook.com/ba.nhat.meta.682524'),
-('090001', 'Nguyễn Ngọc Lữ Duyên', 'Nữ', '2009-11-11', '2009', 'Ban điều hành', 'luduyen841@gmail.com', 'https://www.facebook.com/share/1DfmP5XEb3/'),
-('090002', 'Lê Quốc Vinh', 'Nam', '2009-04-14', '2009', 'Ban điều hành', 'lequocvinh14042009@gmail.com', 'https://www.facebook.com/le.quoc.vinh.493584/about'),
-('090101', 'Đoàn Ngọc An Thi', 'Nam', '2009-01-02', '2009', 'Ban thi đấu', 'hoanggaylord@gmail.com', 'fb.com/notadumpsimp'),
-('090102', 'Nguyễn Thị Hà Phương', 'Nữ', '2009-01-21', '2009', 'Ban thi đấu', 'nguyenthiphuong123456@gmail.com', 'https://www.facebook.com/phuong.nguyenthiha.948'),
-('090103', 'Hoàng Trương Ngọc Tuấn', 'Nam', '2009-02-05', '2009', 'Ban thi đấu', 'tuantk2009@gmail.com', 'https://www.facebook.com/tuan.hoangtruongngoc.3'),
-('090104', 'Trịnh Anh Khoa', 'Nam', '2009-11-08', '2009', 'Ban thi đấu', 'trinhanhkhoa08112009@gmail.com', 'https://www.facebook.com/share/19wpdyCHR/'),
-('100101', 'Bùi Anh Khoa', 'Nam', '2010-01-05', '2010', 'Ban thi đấu', 'buianhkhoa051110@gmail.com', 'https://www.facebook.com/share/1EfrcgDAk/'),
-('100102', 'Doãn Bá Minh Khôi', 'Nam', '2010-05-12', '2010', 'Ban thi đấu', 'khoihere118@gmail.com', 'Minh Khôi'),
-('100201', 'Lê Trọng Khang', 'Nam', '2010-04-16', '2010', 'Ban truyền thông', 'antk232323@gmail.com', 'https://www.facebook.com/share/1C5ijmdpD/'),
-('100202', 'Nguyễn Trung Chinh', 'Nam', '2010-11-28', '2010', 'Ban truyền thông', 'chinhne.28112010@gmail.com', 'https://www.facebook.com/share/1McCJYjYn/'),
-('100203', 'Nguyễn Anh Kiệt', 'Nam', '2010-06-01', '2010', 'Ban truyền thông', 'nguyenakiet16210@gmail.com', 'https://www.facebook.com/share/1ADP5kC2dM/'),
-('100204', 'Nguyễn Ngọc Thiên Ngân', 'Nữ', '2010-02-08', '2010', 'Ban truyền thông', 'nguyenngocthienngan.vn@gmail.com', 'https://www.facebook.com/share/1CqWDFsbm2/');
+INSERT INTO `members` (`ma_dinh_danh`, `ho_ten`, `gioi_tinh`, `ngay_sinh`, `nam_sinh`, `ban`, `gmail`, `link_fb`, `avatar`) VALUES
+('050401', 'Võ Lê Chí Dũng', 'Nam', '2005-05-16', '2005', 'Cựu học sinh', 'volechidung@gmail.com', 'https://www.facebook.com/chi.dung.1605/', 'uploads/avatars/050401_1768997205.jpg'),
+('060401', 'Nguyễn Cao Xuân Trung', 'Nam', '2006-04-27', '2006', 'Cựu học sinh', 'godhander274@gmail.com', 'https://www.facebook.com/xuantrung274/', NULL),
+('060402', 'Trần Thiên Phú', 'Nam', '2006-03-28', '2006', 'Cựu học sinh', 'Tranthienphu2803@gmail.com', 'https://www.facebook.com/Oken.283/', NULL),
+('060403', 'Phạm Phúc Thịnh', 'Nam', '2006-01-01', '2006', 'Cựu học sinh', 'thinhphamapt@gmail.com', 'https://www.facebook.com/thinhDI01', NULL),
+('060404', 'Nguyễn Minh Phúc', 'Nam', '2006-07-14', '2006', 'Cựu học sinh', 'manhduonglhp3@gmail.com', 'https://www.facebook.com/share/1AWRuZpr3j/?mibextid=wwXIfr', NULL),
+('060405', 'Doãn Bá Nhật', 'Nam', '2006-02-03', '2006', 'Cựu học sinh', 'doanbanhat0302@gmail.com', 'https://www.facebook.com/share/17Tey1LqYP/?mibextid=wwXIfr', NULL),
+('070401', 'Trương Thái Khang Duy', 'Nam', '2007-03-06', '2007', 'Cựu học sinh', 'khangduytruong1@gmail.com', 'https://www.facebook.com/share/1AoAzC5dHx/', NULL),
+('070402', 'Trương Thái Kha Duy', 'Nam', '2007-03-06', '2007', 'Cựu học sinh', 'khaduytruong207@gmail.com', 'https://www.facebook.com/share/17WdWLYcbM/', NULL),
+('070403', 'Nguyễn Bảo Long', 'Nam', '2007-11-17', '2007', 'Cựu học sinh', 'noir171127@gmail.com', 'https://www.facebook.com/longnguyen171127', NULL),
+('080101', 'Doãn Bá Trí', 'Nam', '2008-07-15', '2008', 'Ban thi đấu', 'doanbatri.it@gmail.com', 'https://www.facebook.com/tridev157', NULL),
+('080102', 'Nguyễn Thị Kim Ngân', 'Nữ', '2008-08-19', '2008', 'Ban thi đấu', 'ngkngan1908@gmail.com', 'https://www.facebook.com/share/176D1ypFY4/', NULL),
+('080103', 'Phạm Hải Đăng', 'Nam', '2008-12-16', '2008', 'Ban thi đấu', 'dangpham.161208@gmail.com', 'https://www.facebook.com/ankdenbien12/', NULL),
+('080104', 'Võ Minh Khánh', 'Nam', '2008-06-01', '2008', 'Ban thi đấu', 'minhkhanh070640@gmail.com', 'https://www.facebook.com/share/17uZEkT6HQ/', NULL),
+('080105', 'Phan Nguyễn Như Ngọc', 'Nữ', '2008-09-30', '2008', 'Ban thi đấu', 'nhungoc300908@gmail.com', 'https://www.facebook.com/share/17iZpbDmYw/', NULL),
+('080201', 'Phan Thị Thảo My', 'Nữ', '2008-08-07', '2008', 'Ban truyền thông', 'myphan7878@gmail.com', 'https://www.facebook.com/share/1brVGntGwf/', NULL),
+('080301', 'Nguyễn Ngọc Thảo Như', 'Nữ', '2008-10-09', '2008', 'Ban thiết kế', 'nguyenngocthaonhu910@gmail.com', 'https://www.facebook.com/ba.nhat.meta.682524', NULL),
+('090001', 'Nguyễn Ngọc Lữ Duyên', 'Nữ', '2009-11-11', '2009', 'Ban điều hành', 'luduyen841@gmail.com', 'https://www.facebook.com/share/1DfmP5XEb3/', NULL),
+('090002', 'Lê Quốc Vinh', 'Nam', '2009-04-14', '2009', 'Ban điều hành', 'lequocvinh14042009@gmail.com', 'https://www.facebook.com/le.quoc.vinh.493584/about', NULL),
+('090101', 'Đoàn Ngọc An Thi', 'Nam', '2009-01-02', '2009', 'Ban thi đấu', 'hoanggaylord@gmail.com', 'fb.com/notadumpsimp', NULL),
+('090102', 'Nguyễn Thị Hà Phương', 'Nữ', '2009-01-21', '2009', 'Ban thi đấu', 'nguyenthiphuong123456@gmail.com', 'https://www.facebook.com/phuong.nguyenthiha.948', NULL),
+('090103', 'Hoàng Trương Ngọc Tuấn', 'Nam', '2009-02-05', '2009', 'Ban thi đấu', 'tuantk2009@gmail.com', 'https://www.facebook.com/tuan.hoangtruongngoc.3', NULL),
+('090104', 'Trịnh Anh Khoa', 'Nam', '2009-11-08', '2009', 'Ban thi đấu', 'trinhanhkhoa08112009@gmail.com', 'https://www.facebook.com/share/19wpdyCHR/', NULL),
+('100101', 'Bùi Anh Khoa', 'Nam', '2010-01-05', '2010', 'Ban thi đấu', 'buianhkhoa051110@gmail.com', 'https://www.facebook.com/share/1EfrcgDAk/', NULL),
+('100102', 'Doãn Bá Minh Khôi', 'Nam', '2010-05-12', '2010', 'Ban thi đấu', 'khoihere118@gmail.com', 'https://www.facebook.com/mkhdeeptry', NULL),
+('100201', 'Lê Trọng Khang', 'Nam', '2010-04-16', '2010', 'Ban truyền thông', 'antk232323@gmail.com', 'https://www.facebook.com/share/1C5ijmdpD/', NULL),
+('100202', 'Nguyễn Trung Chinh', 'Nam', '2010-11-28', '2010', 'Ban truyền thông', 'chinhne.28112010@gmail.com', 'https://www.facebook.com/share/1McCJYjYn/', NULL),
+('100203', 'Nguyễn Anh Kiệt', 'Nam', '2010-06-01', '2010', 'Ban truyền thông', 'nguyenakiet16210@gmail.com', 'https://www.facebook.com/share/1ADP5kC2dM/', NULL),
+('100204', 'Nguyễn Ngọc Thiên Ngân', 'Nữ', '2010-02-08', '2010', 'Ban truyền thông', 'nguyenngocthienngan.vn@gmail.com', 'https://www.facebook.com/share/1CqWDFsbm2/', NULL);
 
 --
 -- Triggers `members`
 --
+DELIMITER $$
+CREATE TRIGGER `trg_auto_create_account` AFTER INSERT ON `members` FOR EACH ROW BEGIN
+    INSERT INTO `accounts` (`ma_dinh_danh`, `password`) 
+    VALUES (NEW.ma_dinh_danh, '1');
+END
+$$
+DELIMITER ;
 DELIMITER $$
 CREATE TRIGGER `trg_generate_ma_dinh_danh` BEFORE INSERT ON `members` FOR EACH ROW BEGIN
     DECLARE yy CHAR(2);
@@ -106,10 +159,26 @@ DELIMITER ;
 --
 
 --
+-- Indexes for table `accounts`
+--
+ALTER TABLE `accounts`
+  ADD PRIMARY KEY (`ma_dinh_danh`);
+
+--
 -- Indexes for table `members`
 --
 ALTER TABLE `members`
   ADD PRIMARY KEY (`ma_dinh_danh`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `accounts`
+--
+ALTER TABLE `accounts`
+  ADD CONSTRAINT `fk_accounts_members` FOREIGN KEY (`ma_dinh_danh`) REFERENCES `members` (`ma_dinh_danh`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
