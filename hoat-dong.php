@@ -54,7 +54,7 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
     <!-- Tiêu đề trang -->
     <section class="page-header">
         <div class="container">
-            <h1 class="page-title">HOẠT ĐỘNG</h1>
+            <h1 class="page-title">activities</h1>
             <p class="page-subtitle">Các hoạt động trong năm của CLB Tin học Trần Cao Vân</p>
         </div>
     </section>

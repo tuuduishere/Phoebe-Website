@@ -44,10 +44,10 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
         </button>
         <div id="langDropdownMenu" class="hidden absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg py-1 z-[1100] border border-gray-200">
             <a href="?lang=vi" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                <span class="mr-2">🇻🇳</span> Tiếng Việt
+                <span class="mr-2">vn</span> Tiếng Việt
             </a>
             <a href="?lang=en" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                <span class="mr-2">🇬🇧</span> English
+                <span class="mr-2">en</span> English
             </a>
         </div>
     </div>
@@ -301,17 +301,6 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
     </footer>
 
 </body>
-
-    <!-- Hero Section 
-    <section class="hero">
-        <div class="hero-content">
-            <p class="hero-text">
-                Vikings với sự đầu tư bài bản, kĩ lưỡng và kinh nghiệm hàng chục năm trong ngành đã, đang và sẽ luôn là môi trường sinh hoạt, luyện tập lý tưởng tạo nên những nhà vô địch Esports - Champions Begin
-            </p>
-            <button class="hero-button">CHI NHÁNH</button>
-        </div>
-    </section>
--->
 
     <script src="script.js"></script>
 </body>
