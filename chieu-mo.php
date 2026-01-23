@@ -18,11 +18,39 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
 </head>
 
 <body class="bg-black text-white">
+<div id="side-menu" class="fixed inset-y-0 left-0 w-72 bg-[#111] border-r border-gray-800 z-[100] transform -translate-x-full transition-transform duration-300 ease-in-out">
+    <div class="p-6">
+        <div class="flex justify-between items-center mb-10">
+            <h2 class="font-angas text-xl text-[#328396]">MENU</h2>
+            <button onclick="toggleMenu()" class="text-gray-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+        </div>
+        
+        <nav class="space-y-6">
+            <a href="PhoebeLanding.php" class="flex items-center gap-4 text-gray-300 hover:text-[#328396] transition font-bold">
+                <i class="fa-solid fa-house w-6"></i> Trang chủ
+            </a>
+            <a href="profile.php" class="flex items-center gap-4 text-[#328396] transition font-bold">
+                <i class="fa-solid fa-user w-6"></i> Hồ sơ cá nhân
+            </a>
+            <a href="#" class="flex items-center gap-4 text-gray-300 hover:text-[#328396] transition font-bold">
+                <i class="fa-solid fa-calendar-days w-6"></i> Sự kiện
+            </a>
+            <a href="logout.php" class="flex items-center gap-4 text-red-500 hover:bg-red-500/10 p-2 -ml-2 rounded-lg transition font-bold">
+                <i class="fa-solid fa-right-from-bracket w-6"></i> Đăng xuất
+            </a>
+        </nav>
+    </div>
+</div>
 
+<div id="menu-overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[90] hidden opacity-0 transition-opacity duration-300"></div>
     <!-- Thanh điều hướng -->
     <nav class="navbar" id="navbar">
         <div class="nav-left">
-            <i class="fa-solid fa-bars-staggered"></i>
+<button id="menuTrigger" onclick="toggleMenu()" class="menu-btn">
+    <i class="fa-solid fa-bars-staggered"></i>
+</button> 
             <img src="img/logofavicon.png" alt="PhoebeLogo" class="logo">
             <span class="title">PhoebeTranCaoVan</span>
         </div>
@@ -34,22 +62,58 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
             <li><a href="thanh-vien.php">THÀNH VIÊN</a></li>
             <li><a href="chieu-mo.php" class="active">THÔNG BÁO CHIÊU MỘ</a></li>
         </ul>
+        
         <div class="nav-buttons flex items-center gap-4">
+            <!-- Language Selector -->
+    <div class="relative inline-block" id="langDropdownContainer">
+        <button class="flex items-center gap-1 px-3 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-100 transition-all" onclick="toggleLangDropdown()">
+            <i class="fa-solid fa-globe"></i>
+            <span id="currentLang">VI</span>
+            <i class="fa-solid fa-chevron-down text-xs"></i>
+        </button>
+        <div id="langDropdownMenu" class="hidden absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg py-1 z-[1100] border border-gray-200">
+            <a href="?lang=vi" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <span class="mr-2">vn</span> Tiếng Việt
+            </a>
+            <a href="?lang=en" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                <span class="mr-2">en</span> English
+            </a>
+        </div>
+    </div>
     <button class="btn-outline">Hội cựu học sinh CLB</button>
     
-    <?php if ($isLoggedIn): ?>
-        <div class="flex items-center gap-2 bg-[#328396] px-4 py-2 rounded-lg cursor-pointer" 
-             onclick="window.location.href='profile.php'">
-            <i class="fa-solid fa-circle-user"></i>
-            <span>Xin chào, <?php echo htmlspecialchars($userName); ?></span>
+   <?php if ($isLoggedIn): ?>
+        <div class="relative inline-block text-left" id="userDropdownContainer">
+            <div class="flex items-center gap-2 bg-[#328396] hover:bg-[#256675] px-4 py-2 rounded-lg transition-all cursor-pointer border border-white/20" 
+                 onclick="toggleDropdown()">
+                <i class="fa-solid fa-circle-user text-xl"></i>
+                <span class="text-sm font-semibold whitespace-nowrap">
+                    Xin chào, <?php echo htmlspecialchars($userName); ?>
+                </span>
+                <i class="fa-solid fa-chevron-down text-xs ml-1"></i>
+            </div>
+
+            <div id="userDropdownMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-[1100] border border-gray-200">
+                <a href="profile.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 border-b border-gray-100">
+                    <i class="fa-solid fa-id-card mr-2"></i> Thông tin cá nhân
+                </a>
+                <a href="cap-lai-the.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 border-b border-gray-100">
+                    <i class="fa-solid fa-credit-card mr-2"></i> Cấp lại thẻ thành viên
+                </a>
+                <a href="logout.php" class="block px-4 py-2 text-sm text-red-600 hover:bg-red-50">
+                    <i class="fa-solid fa-right-from-bracket mr-2"></i> Đăng xuất
+                </a>
+            </div>
         </div>
     <?php else: ?>
-        <button class="btn-primary" onclick="window.location.href='login.php'">PHOEBE ID</button>
+        <button class="btn-primary" onclick="window.location.href='login.php'">
+            PHOEBE ID
+        </button>
     <?php endif; ?>
 </div>
     </nav>
 
-    <div id="white-block" style="width:100%;min-height:80px;background:#fff;position:relative;top:-30px;z-index:2;"></div>
+<div style="width:100%;min-height:80px;background:#fff;position:relative;top:-30px;z-index:2;"></div>
 
     <!-- Tiêu đề trang -->
     <section class="page-header recruitment-header">
@@ -58,7 +122,7 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
             <p class="page-subtitle">Tuyển thành viên CLB Tin học Trần Cao Vân năm học 2024 - 2025</p>
         </div>
     </section>
-
+<div id="white-block" style="width:100%;min-height:40px;background:#fff;position:relative;top:-30px;z-index:2;"></div>
     <!-- Nội dung chính -->
     <div class="container">
 

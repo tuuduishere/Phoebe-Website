@@ -4,129 +4,120 @@ const navbar = document.getElementById('navbar');
 const whiteBlock = document.getElementById('white-block');
 
 // ========================================
-// MOBILE MENU TOGGLE
+// SIDE MENU TOGGLE - CHỐNG DOUBLE CLICK
 // ========================================
 
-// Lấy hamburger icon và menu
-const hamburgerIcon = document.querySelector('.nav-left i');
-const navMenu = document.querySelector('.nav-menu');
+// Sử dụng Flag để chống lỗi double-click như đã xử lý trước đó
+let isMenuProcessing = false;
 
-// Toggle menu khi click vào hamburger icon
-if (hamburgerIcon && navMenu) {
-    hamburgerIcon.addEventListener('click', function (e) {
-        e.stopPropagation();
-        navMenu.classList.toggle('active');
+function toggleMenu() {
+    if (isMenuProcessing) return;
 
-        // Thay đổi icon khi menu mở/đóng
-        if (navMenu.classList.contains('active')) {
-            this.classList.remove('fa-bars-staggered');
-            this.classList.add('fa-xmark');
-        } else {
-            this.classList.remove('fa-xmark');
-            this.classList.add('fa-bars-staggered');
-        }
-    });
+    const sidebar = document.getElementById('side-menu');
+    const trigger = document.getElementById('menuTrigger');
+    const overlay = document.getElementById('menu-overlay');
 
-    // Đóng menu khi click bên ngoài
-    document.addEventListener('click', function (e) {
-        if (!navMenu.contains(e.target) && !hamburgerIcon.contains(e.target)) {
-            navMenu.classList.remove('active');
-            hamburgerIcon.classList.remove('fa-xmark');
-            hamburgerIcon.classList.add('fa-bars-staggered');
-        }
-    });
+    const isOpen = sidebar.classList.contains('translate-x-0');
+    isMenuProcessing = true;
 
-    // Đóng menu khi click vào một link trong menu
-    const menuLinks = navMenu.querySelectorAll('a');
-    menuLinks.forEach(link => {
-        link.addEventListener('click', function () {
-            navMenu.classList.remove('active');
-            hamburgerIcon.classList.remove('fa-xmark');
-            hamburgerIcon.classList.add('fa-bars-staggered');
-        });
-    });
+    if (!isOpen) {
+        // MỞ MENU
+        sidebar.classList.add('translate-x-0');
+        sidebar.classList.remove('-translate-x-full');
+        // Kích hoạt sáng, viền đen và kéo giãn
+        if (trigger) trigger.classList.add('active-btn'); 
+        
+        overlay.classList.remove('hidden');
+        setTimeout(() => overlay.classList.add('opacity-100'), 10);
+    } else {
+        // ĐÓNG MENU
+        sidebar.classList.remove('translate-x-0');
+        sidebar.classList.add('-translate-x-full');
+        // Tắt hiệu ứng kéo giãn và viền đen
+        if (trigger) trigger.classList.remove('active-btn'); 
+        
+        overlay.classList.remove('opacity-100');
+        setTimeout(() => overlay.classList.add('hidden'), 300);
+    }
+
+    setTimeout(() => { isMenuProcessing = false; }, 400); // Khớp với transition CSS
 }
 
-// ========================================
-// NAVBAR THEME - SCROLL BASED
-// Trang: den khi cuon xuong, trang o dau trang
-// ========================================
+// Đóng menu khi click ra ngoài vùng Menu (click vào Overlay)
+document.addEventListener('click', function (e) {
+    const sidebar = document.getElementById('side-menu');
+    const trigger = document.getElementById('menuTrigger');
+    
+    // Nếu menu đang mở và vị trí click không nằm trong menu hay nút bấm thì mới đóng
+    if (sidebar && sidebar.classList.contains('translate-x-0')) {
+        if (!sidebar.contains(e.target) && (!trigger || !trigger.contains(e.target))) {
+            toggleMenu();
+        }
+    }
+});
 
-// Nguong scroll de doi theme (pixels)
-const SCROLL_THRESHOLD = 100;
+// Đóng menu khi click vào một link trong menu
+const sidebarLinks = document.querySelectorAll('#side-menu a');
+sidebarLinks.forEach(link => {
+    link.addEventListener('click', function () {
+        const sidebar = document.getElementById('side-menu');
+        if (sidebar && sidebar.classList.contains('translate-x-0')) {
+            toggleMenu();
+        }
+    });
+});
 
-// Ham xu ly scroll cho cac trang KHONG co white-block
-function handleScrollTheme() {
-    if (!navbar) return;
 
-    if (window.scrollY > SCROLL_THRESHOLD) {
-        navbar.classList.add('dark-theme');
+
+function handleNavbarTransition() {
+    const nav = document.querySelector('.navbar');
+    const whiteBlock = document.getElementById('white-block');
+
+    if (!nav || !whiteBlock) return;
+
+    // THAY ĐỔI TẠI ĐÂY: Lấy mép TRÊN của Navbar thay vì mép dưới
+    const navTop = nav.getBoundingClientRect().top;
+    const blockTop = whiteBlock.getBoundingClientRect().top;
+
+    // Nếu mép TRÊN của Navbar chạm hoặc đi qua mép trên của khối trắng
+    if (navTop >= blockTop) {
+        if (!nav.classList.contains('dark-theme')) {
+            nav.classList.add('dark-theme');
+        }
     } else {
-        navbar.classList.remove('dark-theme');
+        if (nav.classList.contains('dark-theme')) {
+            nav.classList.remove('dark-theme');
+        }
     }
 }
 
-// IntersectionObserver cho Landing page (co white-block)
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            navbar.classList.add('dark-theme');
-        } else {
-            navbar.classList.remove('dark-theme');
-        }
-    });
-}, { threshold: 0.5 });
+// Giữ nguyên các sự kiện lắng nghe
+window.addEventListener('scroll', handleNavbarTransition, { passive: true });
+window.addEventListener('DOMContentLoaded', handleNavbarTransition);
 
-function openNfcPopup() {
-    // Kiem tra xem thiet bi co ho tro NFC khong
-    if ('NFC' in window) {
-        // Mo cua so pop up cho quet the
-        alert('Mo cua so quet the NFC...'); // Thay the bang ma mo pop up thuc te
-    } else {
-        alert('Thiet bi khong ho tro NFC.');
-    }
-}
+// ========================================
+// DROPDOWN & UTILS
+// ========================================
 
-// Chon phuong thuc dua tren trang
-if (whiteBlock) {
-    // Landing page: dung IntersectionObserver
-    console.log("Navbar Theme: Using IntersectionObserver with white-block");
-    observer.observe(whiteBlock);
-} else if (navbar) {
-    // Cac trang khac: dung scroll event
-    console.log("Navbar Theme: white-block not found, using scroll fallback");
-    window.addEventListener('scroll', handleScrollTheme, { passive: true });
-    // Chay 1 lan khi load de set trang thai ban dau
-    handleScrollTheme();
-}
-
-console.log("Phoebe Landing Page Loaded");
 function toggleDropdown() {
     const menu = document.getElementById('userDropdownMenu');
-    menu.classList.toggle('hidden');
+    if (menu) menu.classList.toggle('hidden');
 }
 
-// Đóng menu nếu người dùng click ra ngoài khu vực dropdown
+function toggleLangDropdown() {
+    const menu = document.getElementById('langDropdownMenu');
+    if (menu) menu.classList.toggle('hidden');
+}
+
 window.onclick = function (event) {
     if (!event.target.closest('#userDropdownContainer')) {
         const menu = document.getElementById('userDropdownMenu');
-        if (menu && !menu.classList.contains('hidden')) {
-            menu.classList.add('hidden');
-        }
+        if (menu && !menu.classList.contains('hidden')) menu.classList.add('hidden');
     }
-    // Close language dropdown when clicking outside
     if (!event.target.closest('#langDropdownContainer')) {
         const langMenu = document.getElementById('langDropdownMenu');
-        if (langMenu && !langMenu.classList.contains('hidden')) {
-            langMenu.classList.add('hidden');
-        }
+        if (langMenu && !langMenu.classList.contains('hidden')) langMenu.classList.add('hidden');
     }
 }
 
-// Language Dropdown Toggle
-function toggleLangDropdown() {
-    const menu = document.getElementById('langDropdownMenu');
-    if (menu) {
-        menu.classList.toggle('hidden');
-    }
-}
+console.log("Phoebe Landing Page Loaded");

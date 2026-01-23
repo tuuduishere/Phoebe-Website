@@ -69,23 +69,6 @@ body {
     background-color: #ffffff;
 }
 
-.chat-button {
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    background-color: #ec4899;
-    color: white;
-    padding: 1rem;
-    border-radius: 9999px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-    font-size: 1.25rem;
-    cursor: pointer;
-}
-
-.chat-button:hover {
-    background-color: #db2777;
-}
-
 /* Navbar */
 @font-face {
     font-family: "Hennigar";
@@ -160,8 +143,55 @@ body {
     font-size: 1.25rem;
 }
 
-.nav-menu {
-    display: none;
+
+/* Thiết lập cơ bản cho nút menu */
+#menuTrigger {
+    width: 45px; 
+    height: 33px; 
+    padding: 0 !important; 
+    margin: 0 !important;
+    border-radius: 10px;
+    /* FIX: Để trong suốt để không bị lộ vệt trắng trên nền đen của Navbar */
+    background-color: transparent !important; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+}
+
+/* Icon mặc định: Màu đen khi ở trên nền trắng, màu trắng khi ở dark-theme */
+#menuTrigger i {
+    color: #000000; 
+    font-size: 1.1rem !important;
+    transition: all 0.3s ease;
+}
+
+/* ĐỔI MÀU ICON KHI THANH NAV SANG DARK-THEME */
+.navbar.dark-theme #menuTrigger i {
+    color: #ffffff !important;
+}
+
+/* KHI DI CHUỘT VÀO (HOVER) */
+#menuTrigger:hover:not(.active-btn) {
+    background-color: #328396 !important; /* Màu xanh Phoebe */
+}
+
+#menuTrigger:hover:not(.active-btn) i {
+    color: #ffffff !important;
+}
+
+/* TRẠNG THÁI KHI ĐÃ CLICK (ACTIVE) */
+#menuTrigger.active-btn {
+    width: 65px !important; 
+    background-color: #328396 !important; /* Màu xanh Phoebe phủ kín */
+    /* Thêm viền đen bọc ngoài khi Click như yêu cầu trước đó */
+    box-shadow: 0 0 10px rgba(50, 131, 150, 0.3);
+}
+
+#menuTrigger.active-btn i {
+    color: #ffffff !important; 
 }
 
 .nav-buttons .btn-outline,
@@ -198,7 +228,7 @@ body {
 
     .nav-menu a {
         transition: background 0.3s, color 0.3s;
-        padding: 0.5rem 0.75rem;
+        padding: 0.5rem 0.751rem;
         border-radius: 0.5rem;
     }
 
