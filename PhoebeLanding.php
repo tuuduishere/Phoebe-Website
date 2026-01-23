@@ -17,12 +17,44 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-black text-white">
+<body 
 
+    class="bg-black text-white">
+<div id="side-menu" class="fixed inset-y-0 left-0 w-72 bg-[#111] border-r border-gray-800 z-[100] transform -translate-x-full transition-transform duration-300 ease-in-out">
+    <div class="p-6">
+        <div class="flex justify-between items-center mb-10">
+            <h2 class="font-angas text-xl text-[#328396]">MENU</h2>
+            <button onclick="toggleMenu()" class="text-gray-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+        </div>
+        
+        <nav class="space-y-6">
+            <a href="PhoebeLanding.php" class="flex items-center gap-4 text-gray-300 hover:text-[#328396] transition font-bold">
+                <i class="fa-solid fa-house w-6"></i> Trang chủ
+            </a>
+            <a href="profile.php" class="flex items-center gap-4 text-[#328396] transition font-bold">
+                <i class="fa-solid fa-user w-6"></i> Hồ sơ cá nhân
+            </a>
+            <a href="#" class="flex items-center gap-4 text-gray-300 hover:text-[#328396] transition font-bold">
+                <i class="fa-solid fa-calendar-days w-6"></i> Sự kiện
+            </a>
+            <a href="logout.php" class="flex items-center gap-4 text-red-500 hover:bg-red-500/10 p-2 -ml-2 rounded-lg transition font-bold">
+                <i class="fa-solid fa-right-from-bracket w-6"></i> Đăng xuất
+            </a>
+        </nav>
+    </div>
+</div>
+
+<div id="menu-overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[90] hidden opacity-0 transition-opacity duration-300"></div>
   <!-- Navbar -->
+   
 <nav class="navbar" id="navbar">
   <div class="nav-left">
+    
+<button id="menuTrigger" onclick="toggleMenu()" class="menu-btn">
     <i class="fa-solid fa-bars-staggered"></i>
+</button>
     <img src="img/logofavicon.png" alt="PhoebeLogo" class="logo">
     <span class="title">PhoebeTranCaoVan</span>
   </div>
@@ -84,7 +116,7 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
 </div>
 </nav>
 
-        <div style="width:100%;min-height:80px;background:#fff;position:relative;top:-30px;z-index:2;"></div>
+        <div style="width:100%;min-height:120px;background:#fff;position:relative;top:30px;z-index:2;"></div>
         <!-- Background Video -->
         <div class="video-area">
             <div class="video-wrapper">
