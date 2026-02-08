@@ -2,7 +2,7 @@
 
 Đây sẽ là website chính thức của CLB. Nghiêm cấm hành vi share, fork hay clone mà không xin phép bản quyền!!
 
-## Thông báo tiến trình hoàn thành: 45%
+## Thông báo tiến trình hoàn thành: 65%
 
 ## Hướng dẫn cài đặt
 
@@ -12,7 +12,7 @@ Sử dụng Git clone (đã cấp quyền contributor hay collaborator) trong VS
 git clone <link của repo>
 ```
 
-## Cách sử dụng
+## Cách đóng góp vào code
 
 ```bash
 git init (khởi tạo)
@@ -22,7 +22,20 @@ git commit (Thực hiện commit cho repo)
 
 Tạo PR ở trên GitHub hoặc Terminal.
 ```
-
+## Cách sử dụng web
+Xin chào bạn, nếu như đây là lần đầu bạn tới web của tụi mình thì chúng mình có những tính năng như sau:
++ Quản lý hoạt động của CLB
++ Quản lý thành tích của CLB
++ Quản lý và bày bán những merch nhà làm
++ Quản lý thành viên
++ Quản lý và thông báo chiêu mộ
++ Hệ thống đăng nhập đăng ký cho thành viên
++ Cho phép khách (guest) sử dụng những tính năng thú vị (tính điểm từng môn để xem KQ học tập, xem thông tin cũng như chi tiết về những hoạt động trải nghiệm CLB, {mua merch online và thanh toán ngay tại web -- tính năng này đang phát triển})
+Nếu bạn là thành viên của CLB thì dĩ nhiên sẽ có những đặc quyển riêng để sử dụng web
++ Thành viên được phát hành thẻ NFC thành viên để có thể đăng nhập nhanh ngay trên web thay vì đăng nhập thủ công.
++ Giảm 50% giá khi thành viên mua merch của CLB
++ Miễn phí phát hành thẻ lần đầu (những lần sau sẽ có tính phí)
++ Tặng kèm móc khóa có đính kèm NFC dẫn đến Facebook của thành viên và CLB nên có ai đó cần xin info nhanh về bạn đó hay clb khi mua 1 merch bất kỳ của clb.
 
 ## Các Contributer của dự án
 | Họ Tên  | Vai trò | Dev Type |
