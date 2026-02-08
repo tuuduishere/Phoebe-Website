@@ -118,7 +118,7 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
     <!-- Tiêu đề trang -->
     <section class="page-header members-header">
         <div class="container">
-            <h1 class="page-title">THÀNH VIÊN</h1>
+            <h1 class="page-title">MEMBERS</h1>
             <p class="page-subtitle">Đội ngũ thành viên CLB Tin học Trần Cao Vân</p>
         </div>
     </section>
@@ -129,7 +129,7 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
         <!-- Ban Chủ nhiệm -->
         <section class="members-section">
             <div class="title-row">
-                <h2>BAN CHỦ NHIỆM</h2>
+                <h2>BAN ĐIỀU HÀNH</h2>
             </div>
 
             <div class="leadership-grid">
@@ -140,9 +140,9 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
                         <div class="leader-badge">Chủ nhiệm</div>
                     </div>
                     <div class="leader-info">
-                        <h3>Võ Lê Chí Dũng</h3>
-                        <p class="leader-role">Founder - Full-Stack Developer</p>
-                        <p class="leader-description">Sáng lập và điều hành CLB. Phụ trách định hướng phát triển và các
+                        <h3>Lê Quốc Vinh</h3>
+                        <p class="leader-role">Lớp 11 Trần Cao Vân</p>
+                        <p class="leader-description">Dẫn dắt và điều hành CLB nhiệm kỳ 25-26. Phụ trách định hướng phát triển và các
                             dự án web của CLB.</p>
                         <div class="leader-social">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -157,8 +157,8 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
                         <div class="leader-badge">Phó Chủ nhiệm</div>
                     </div>
                     <div class="leader-info">
-                        <h3>Chưa cập nhật</h3>
-                        <p class="leader-role">Quản lý hoạt động</p>
+                        <h3>Nguyễn Ngọc Lữ Duyên</h3>
+                        <p class="leader-role">Lớp 11 Trần Cao Vân</p>
                         <p class="leader-description">Hỗ trợ Chủ nhiệm trong việc điều phối các hoạt động và sự kiện của
                             CLB.</p>
                         <div class="leader-social">
@@ -170,13 +170,12 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
                 <div class="leader-card">
                     <div class="leader-image">
                         <img src="https://via.placeholder.com/200x200/f093fb/ffffff?text=TK" alt="Thủ quỹ">
-                        <div class="leader-badge">Thủ quỹ</div>
+                        <div class="leader-badge">Cố Vấn</div>
                     </div>
                     <div class="leader-info">
-                        <h3>Chưa cập nhật</h3>
-                        <p class="leader-role">Quản lý tài chính CLB</p>
-                        <p class="leader-description">Phụ trách thu chi, quản lý ngân sách và các khoản đóng góp của
-                            CLB.</p>
+                        <h3>Nguyễn Cao Xuân Trung</h3>
+                        <p class="leader-role">Cựu học sinh</p>
+                        <p class="leader-description">Hỗ trợ giải quyết những vấn đề liên quan đến hoạt động của CLB.</p>
                         <div class="leader-social">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                         </div>

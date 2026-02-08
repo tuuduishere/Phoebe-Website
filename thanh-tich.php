@@ -118,7 +118,7 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
     <!-- Tiêu đề trang -->
     <section class="page-header achievements-header">
         <div class="container">
-            <h1 class="page-title">THÀNH TÍCH</h1>
+            <h1 class="page-title">ACHIEVEMENTS</h1>
             <p class="page-subtitle">Những thành tích CLB đã đạt được qua các năm</p>
         </div>
     </section>

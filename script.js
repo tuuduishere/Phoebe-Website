@@ -121,3 +121,27 @@ window.onclick = function (event) {
 }
 
 console.log("Phoebe Landing Page Loaded");
+
+
+//NFC PROCESS
+function handleNFCScan() {
+    const btn = document.getElementById('nfc-scan-btn');
+    const scanStatus = document.getElementById('scan-text');
+    
+    btn.classList.add('scanning-active'); 
+    scanStatus.innerText = "Đang chờ thẻ...";
+
+    let checkInterval = setInterval(() => {
+        // Thêm tham số thời gian (?t=...) để trình duyệt không lấy cache cũ
+        fetch('check-nfc.php?t=' + Date.now()) 
+            .then(response => response.text())
+            .then(uid => {
+                // Chỉ xử lý nếu UID hợp lệ và không phải chuỗi trống
+                if (uid !== "EMPTY" && uid.trim() !== "") {
+                    clearInterval(checkInterval);
+                    window.location.href = "nfc-login.php?uid=" + uid;
+                }
+            });
+    }, 800);
+    
+}

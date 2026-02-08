@@ -633,326 +633,193 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1500px; /* Độ rộng tối đa khớp với box nội dung bên dưới */
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Phần Header / Navigation Bar */
-.header {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 40px;
+/* --- FIX CĂN GIỮ TUYỆT ĐỐI NỘI DUNG CARD --- */
+.header-nav-centered {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
+    max-width: 1500px !important;
+    margin: 40px auto !important;
 }
 
-.header-item {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+.nav-item-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    /* Căn giữa cả cụm (Icon + Text) vào tâm card */
+    justify-content: center !important; 
+    background: #111111 !important;
+    border: 1.5px solid #222 !important;
+    border-radius: 15px !important;
+    padding: 20px !important; /* Padding đều các phía */
+    min-height: 90px !important; /* Chiều cao cố định để các nút bằng nhau */
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Icon: LOẠI BỎ MARGIN TRÁI ĐỂ KHÔNG BỊ LỆCH */
+.nav-icon {
+    font-size: 1.8rem !important;
+    margin-right: 15px !important; /* Chỉ giữ khoảng cách với chữ bên phải */
+    display: flex !important;
+    align-items: center !important;
+    color: #fff;
+}
+
+/* Cụm chữ: Đảm bảo không có margin/padding thừa */
+.nav-text {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    text-align: left !important; /* Giữ lề trái cho text để đẹp khi đi kèm icon */
+}
+
+.nav-text h3 {
+    font-family: "Angas", sans-serif !important;
+    font-size: 1rem !important;
+    line-height: 1.1 !important;
+    color: #fff;
+}
+
+.nav-text p {
+    font-size: 0.75rem !important;
+    margin: 2px 0 0 0 !important;
+    color: #888;
+    white-space: nowrap; /* Không cho xuống dòng làm lệch tâm */
+}
+
+/* Hiệu ứng Hover chuyên nghiệp */
+.nav-item-card:hover {
+    border-color: #328396 !important;
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 25px rgba(50, 131, 150, 0.2);
+}
+
+/* Hỗ trợ Responsive: Tự động xuống dòng khi màn hình nhỏ */
+@media (max-width: 1200px) {
+    .header-nav-centered {
+        grid-template-columns: repeat(2, 1fr) !important; /* Xuống 2 hàng */
+    }
+}
+
+@media (max-width: 640px) {
+    .header-nav-centered {
+        grid-template-columns: 1fr !important; /* 1 hàng dọc cho mobile */
+    }
+}
+.about-content h2.year-title {
+    font-family: "Angas", sans-serif !important;
+    font-size: 1.8rem !important;
+    margin-bottom: 10px !important;
+    color: #fff;
+}
+/* --- ABOUT CLUB BLOCK --- */
+.about-wrapper {
+    display: flex !important;
+    gap: 40px;
     align-items: center;
-    padding: 15px;
-    text-align: center;
-    border-radius: 8px;
-    transition: background-color 0.3s;
-    cursor: pointer;
-    min-height: 120px;
+    background: #111111;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 50px;
 }
 
-.header-item:hover,
-.header-item.active {
-    background-color: var(--card-bg);
-}
+.about-content { flex: 1; }
 
-.header-item .icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* Dùng màu vòng tròn từ hình ảnh */
-}
-
-/* Biểu tượng (Icon) Placeholder */
-.game-icon {
-    border: 3px solid #00c7e2;
-}
-
-.cyber-icon {
-    border: 3px solid #9900ff;
-}
-
-.esports-icon {
-    border: 3px solid #0050ff;
-}
-
-.business-icon {
-    border: 3px solid #00b0ff;
-}
-
-.header-item h3 {
-    margin: 0 0 5px 0;
-    font-size: 1.1em;
-    font-weight: bold;
-}
-
-.header-item p {
-    font-size: 0.85em;
+.about-description {
     color: #b0b0b0;
+    font-size: 1rem;
+    margin: 20px 0 30px 0;
+    line-height: 1.8;
 }
 
-/* Phần Giải đấu nổi bật */
-.title-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.title-row h2 {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.navigation-arrows button {
-    background: none;
-    border: 1px solid #444;
-    color: var(--text-color);
-    font-size: 1.2em;
-    padding: 5px 10px;
-    margin-left: 10px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.navigation-arrows button:hover:not(:disabled) {
-    background-color: #333;
-}
-
-.navigation-arrows button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-/* Danh sách Card */
-.tournament-list {
+.about-stats-grid {
     display: flex;
     gap: 20px;
-    overflow-x: auto;
-    /* Cho phép cuộn ngang nếu màn hình nhỏ */
-    padding-bottom: 10px;
-    /* Thêm padding để scrollbar không che nội dung */
 }
 
-.tournament-card {
-    flex: 0 0 calc(25% - 15px);
-    /* 4 card mỗi hàng */
-    max-width: 280px;
-    background-color: var(--card-bg);
-    border-radius: 8px;
+.about-stat-box {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    min-width: 150px;
+    text-align: center;
+}
+
+.about-visual { flex: 0.8; }
+
+.image-frame {
+    border-radius: 15px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    min-width: 250px;
-    /* Đảm bảo card không quá nhỏ */
+    box-shadow: 0 0 30px rgba(50, 131, 150, 0.3);
+    border: 2px solid #328396;
 }
 
-.card-image-wrapper {
+/* --- ARTICLES BLOCK GRID --- */
+.articles-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.article-block {
+    background: #111;
+    border: 1.5px solid #333;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.article-block:hover {
+    border-color: #328396;
+    transform: translateY(-5px);
+}
+
+.article-thumb {
+    height: 200px;
     position: relative;
-    height: 180px;
-    /* Chiều cao cố định cho ảnh */
 }
 
-.card-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+.article-thumb img { width: 100%; height: 100%; object-fit: cover; }
 
-.game-logo {
+.category-tag {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 5px 10px;
+    top: 15px;
+    left: 15px;
+    padding: 4px 12px;
+    font-size: 0.75rem;
     font-weight: bold;
-    font-size: 1.5em;
-    color: var(--text-color);
-    line-height: 1;
+    border-radius: 5px;
 }
 
-/* Logo Game Colors */
-.tft-logo {
-    background-color: var(--tft-color);
+.article-body { padding: 25px; }
+
+.article-body h3 {
+    font-family: "Angas", sans-serif !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 12px !important;
+    color: #fff;
 }
 
-.valorant-logo {
-    background-color: var(--valorant-color);
-}
-
-.netnennet-logo {
-    background-color: var(--netnennet-color);
-    color: #000;
-    font-size: 1.2em;
-}
-
-.giochomo-logo {
-    background-color: var(--giochomo-color);
-    font-size: 1em;
-}
-
-
-.card-content {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-.card-content h4 {
-    font-size: 1.1em;
-    font-weight: bold;
-    margin-bottom: 10px;
-    height: 40px;
-    /* Giữ chiều cao cố định để card không bị nhảy */
-}
-
-.info-row {
+.article-footer {
     display: flex;
     justify-content: space-between;
-    font-size: 0.9em;
-    margin-bottom: 5px;
-    color: #b0b0b0;
-}
-
-.info-row .value {
-    color: var(--text-color);
-    font-weight: bold;
-}
-
-.info-row .value.empty {
-    color: var(--primary-color);
-}
-
-.prize {
-    color: var(--gold-color);
-    font-weight: bold;
-    font-size: 1.2em;
-    margin: 10px 0;
-}
-
-.cup-icon {
-    margin-right: 5px;
-}
-
-.status {
-    display: flex;
     align-items: center;
-    font-size: 0.9em;
-    color: #b0b0b0;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    border-top: 1px solid #222;
+    padding-top: 15px;
 }
 
-.status .dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: #666;
-    /* Màu xám cho đã kết thúc/mặc định */
-    margin-right: 5px;
-}
-
-.status.upcoming-status .dot {
-    background-color: var(--primary-color);
-    /* Màu xanh dương cho sắp diễn ra */
-}
-
-.schedule {
-    font-size: 0.8em;
-    color: #b0b0b0;
-    margin-bottom: 15px;
-}
-
-.schedule .date {
-    display: block;
-    font-weight: bold;
-    color: var(--text-color);
-}
-
-.schedule .location {
-    display: block;
-    font-style: italic;
-    color: #999;
-}
-
-/* Buttons */
-.btn {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s;
-    margin-top: auto;
-    /* Đẩy nút xuống dưới cùng */
-}
-
-.view-btn {
-    background-color: #444;
-    color: var(--text-color);
-}
-
-.view-btn:hover {
-    background-color: #555;
-}
-
-.register-btn {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-}
-
-.register-btn:hover {
-    background-color: #0056b3;
-}
-
-/* Placeholder for images/mock data */
-.card-image {
-    /* Đảm bảo ảnh nền cho placeholder */
-    background: linear-gradient(135deg, #333 0%, #111 100%);
-}
-
-/* Media Query cho màn hình nhỏ hơn */
-@media (max-width: 1024px) {
-    .tournament-card {
-        flex: 0 0 calc(33.333% - 13.333px);
-        /* 3 card mỗi hàng */
-    }
-}
-
-@media (max-width: 768px) {
-    .header {
-        flex-wrap: wrap;
-    }
-
-    .header-item {
-        flex: 1 1 calc(50% - 10px);
-        /* 2 cột trên di động */
-    }
-
-    .tournament-list {
-        flex-wrap: nowrap;
-    }
-
-    .tournament-card {
-        flex: 0 0 300px;
-        /* Cố định chiều rộng và cho phép cuộn ngang */
-    }
-}
-
+.view-all-link { color: #328396; font-weight: bold; text-decoration: none; font-size: 0.9rem; }
+.read-more-btn { background: none; border: none; color: #328396; font-weight: 800; cursor: pointer; font-size: 0.8rem; }
 /* Footer */
 /* Thiết lập chung */
 body {

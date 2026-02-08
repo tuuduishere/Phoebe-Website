@@ -118,7 +118,7 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
     <!-- Tiêu đề trang -->
     <section class="page-header recruitment-header">
         <div class="container">
-            <h1 class="page-title">THÔNG BÁO CHIÊU MỘ</h1>
+            <h1 class="page-title">recruitment</h1>
             <p class="page-subtitle">Tuyển thành viên CLB Tin học Trần Cao Vân năm học 2024 - 2025</p>
         </div>
     </section>
@@ -130,8 +130,8 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
         <section class="recruitment-banner">
             <div class="banner-content">
                 <div class="banner-text">
-                    <span class="banner-badge">📢 ĐANG MỞ ĐƠN</span>
-                    <h2>Tuyển Thành Viên Khóa 2024</h2>
+                    <span class="banner-badge">ĐANG MỞ ĐƠN</span>
+                    <h2>Tuyển Thành Viên Khóa 2025</h2>
                     <p>CLB Tin học PhoebeTranCaoVan đang tìm kiếm những bạn học sinh yêu thích công nghệ, lập trình và
                         muốn trải nghiệm những hoạt động bổ ích tại trường THPT Trần Cao Vân.</p>
                     <div class="banner-deadline">
