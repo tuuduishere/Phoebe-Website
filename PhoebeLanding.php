@@ -132,163 +132,105 @@ $userName = $isLoggedIn ? $_SESSION['name'] : '';
         </div>
 <!-- REWORK LẠI BODY -->
     <!-- Thông tin về website -->
-    <div class="container">
+<div class="container py-8"> 
+    <header class="header-nav-centered">
+        <div class="nav-item-card group" onclick="window.location.href='hoat-dong.php'">
+            <div class="nav-icon"><i class="fa-solid fa-gamepad"></i></div>
+            <div class="nav-text">
+                <h3>ACTIVITIES</h3>
+                <p>Các hoạt động trong năm</p>
+            </div>
+        </div>
 
-        <header class="header">
-            <div class="header-item">
-                <div class="icon game-icon"></div>
-                <div class="text">
-                    <h3>HOẠT ĐỘNG</h3>
-                    <p>Các hoạt động của CLB trong năm</p>
+        <div class="nav-item-card group" onclick="window.location.href='thanh-tich.php'">
+            <div class="nav-icon"><i class="fa-solid fa-trophy"></i></div>
+            <div class="nav-text">
+                <h3>ACHIEVEMENTS</h3>
+                <p>Giải thưởng tại các kì thi</p>
+            </div>
+        </div>
+
+        <div class="nav-item-card group" onclick="window.location.href='merchandise-page.php'">
+            <div class="nav-icon"><i class="fa-solid fa-shirt"></i></div>
+            <div class="nav-text">
+                <h3>MERCHANDISE</h3>
+                <p>Sản phẩm siêu chất</p>
+            </div>
+        </div>
+
+        <div class="nav-item-card group" onclick="window.location.href='thanh-vien.php'">
+            <div class="nav-icon"><i class="fa-solid fa-users"></i></div>
+            <div class="nav-text">
+                <h3>MEMBERS</h3>
+                <p>Gương mặt tài năng</p>
+            </div>
+        </div>
+    </header>
+</div>
+
+<div class="container py-12">
+    <div class="about-wrapper animate-fadeIn">
+        <div class="about-content">
+            <h2 class="year-title">PhoebeTranCaoVan</h2>
+            <p class="about-description">Câu lạc bộ Lập Trình trường THPT Trần Cao Vân là nơi hội tụ của những tâm hồn đam mê công nghệ. Chúng mình cùng nhau xây dựng những giá trị sáng tạo thực thụ thông qua các dự án thực tế.</p>
+            
+            <div class="about-stats-grid">
+                <div class="about-stat-box">
+                    <span class="stat-num text-gold">50+</span>
+                    <span class="stat-label">Thành viên</span>
+                </div>
+                <div class="about-stat-box border-primary">
+                    <span class="stat-num text-primary">10+</span>
+                    <span class="stat-label">Dự án công nghệ</span>
                 </div>
             </div>
-            <div class="header-item">
-                <div class="icon cyber-icon"></div>
-                <div class="text">
-                    <h3>THÀNH TÍCH</h3>
-                    <p>Những thành tích mà CLB đã đạt được tại các kì thi</p>
-                </div>
+        </div>
+        <div class="about-visual">
+            <div class="image-frame">
+                <img src="img/club-work.jpg" alt="CLB Work">
             </div>
-            <div class="header-item">
-                <div class="icon esports-icon active"></div>
-                <div class="text">
-                    <h3>MERCHANDISE</h3>
-                    <p>Những sản phẩm siêu chất của CLB</p>
-                </div>
-            </div>
-            <div class="header-item">
-                <div class="icon business-icon"></div>
-                <div class="text">
-                    <h3>THÀNH VIÊN</h3>
-                    <p>Những chiếc thành viên tài năng của CLB</p>
-                </div>
-            </div>
-        </header>
-
-        <section class="featured-tournaments">
-            <div class="title-row">
-                <h2>THÔNG TIN NỔI BẬT</h2>
-                <div class="navigation-arrows">
-                    <button class="arrow-btn left-arrow" disabled>&leftarrow;</button>
-                    <button class="arrow-btn right-arrow">&rightarrow;</button>
-                </div>
-            </div>
-
-            <div class="tournament-list">
-
-                <div class="tournament-card finished">
-                    <div class="card-image-wrapper">
-                        <img src="placeholder-tft.jpg" alt="Teamfight Tactics" class="card-image">
-                        <div class="game-logo tft-logo">T</div>
-                    </div>
-                    <div class="card-content">
-                        <h4>NSOC 2025 - Đấu Trường Chân Lý</h4>
-                        <div class="info-row">
-                            <span class="label">Slots</span>
-                            <span class="value">4000/4000</span>
-                        </div>
-                        <div class="prize">
-                            <span class="cup-icon">🏆</span>
-                            <span>345,000,000 VND</span>
-                        </div>
-                        <div class="status finished-status">
-                            <span class="dot"></span>
-                            <span>Đã kết thúc</span>
-                        </div>
-                        <div class="schedule">
-                            <span class="date">11/09/2025 - 06/12/2025</span>
-                            <span class="location">Đấu Trường Chân Lý</span>
-                        </div>
-                        <button class="btn view-btn">Xem</button>
-                    </div>
-                </div>
-
-                <div class="tournament-card finished">
-                    <div class="card-image-wrapper">
-                        <img src="placeholder-valorant.jpg" alt="Valorant" class="card-image">
-                        <div class="game-logo valorant-logo">V</div>
-                    </div>
-                    <div class="card-content">
-                        <h4>NSOC 2025 - Valorant</h4>
-                        <div class="info-row">
-                            <span class="label">Slots</span>
-                            <span class="value">200/200</span>
-                        </div>
-                        <div class="prize">
-                            <span class="cup-icon">🏆</span>
-                            <span>540,000,000 VND</span>
-                        </div>
-                        <div class="status finished-status">
-                            <span class="dot"></span>
-                            <span>Đã kết thúc</span>
-                        </div>
-                        <div class="schedule">
-                            <span class="date">11/09/2025 - 06/12/2025</span>
-                            <span class="location">Valorant</span>
-                        </div>
-                        <button class="btn view-btn">Xem</button>
-                    </div>
-                </div>
-
-                <div class="tournament-card ongoing">
-                    <div class="card-image-wrapper">
-                        <img src="placeholder-netnennet.jpg" alt="Nét Nền Net Tournament" class="card-image">
-                        <div class="game-logo netnennet-logo">T</div>
-                    </div>
-                    <div class="card-content">
-                        <h4>Nét Nền Net Tournament Mùa 11</h4>
-                        <div class="info-row">
-                            <span class="label">Slots</span>
-                            <span class="value">139/139</span>
-                        </div>
-                        <div class="prize">
-                            <span class="cup-icon">🏆</span>
-                            <span>8,000,000 VND</span>
-                        </div>
-                        <div class="status">
-                            <span class="dot"></span>
-                            <span>Đã kết thúc</span>
-                        </div>
-                        <div class="schedule">
-                            <span class="date">12/11/2025 - 21/11/2025</span>
-                            <span class="location">Đấu Trường Chân Lý</span>
-                        </div>
-                        <button class="btn view-btn">Xem</button>
-                    </div>
-                </div>
-
-                <div class="tournament-card upcoming">
-                    <div class="card-image-wrapper">
-                        <img src="placeholder-giochomo.jpg" alt="Giờ Chợ Mở Mùa 7" class="card-image">
-                        <div class="game-logo giochomo-logo">TFF</div>
-                    </div>
-                    <div class="card-content">
-                        <h4>Giờ Chợ Mở Mùa 7</h4>
-                        <div class="info-row">
-                            <span class="label">Slots</span>
-                            <span class="value empty">0/20</span>
-                        </div>
-                        <div class="prize">
-                            <span class="cup-icon">🏆</span>
-                            <span>8,200,000 VND</span>
-                        </div>
-                        <div class="status upcoming-status">
-                            <span class="dot"></span>
-                            <span>Đợt Kích</span>
-                        </div>
-                        <div class="schedule">
-                            <span class="date">22/09/2025 - 28/09/2025</span>
-                            <span class="location">Đợt Kích</span>
-                        </div>
-                        <button class="btn register-btn">Đăng ký</button>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
+        </div>
     </div>
-    
+</div>
+
+<div class="container py-8">
+    <div class="flex-between mb-8">
+        <h2 class="year-title">BÀI VIẾT MỚI NHẤT</h2>
+        <a href="#" class="view-all-link">Xem tất cả bài viết <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <div class="articles-grid">
+        <article class="article-block">
+            <div class="article-thumb">
+                <img src="img/post1.jpg" alt="Post 1">
+                <span class="category-tag bg-primary">KIẾN THỨC</span>
+            </div>
+            <div class="article-body">
+                <h3>Lộ trình học Web cho người mới bắt đầu</h3>
+                <p>Chia sẻ về các công nghệ HTML, CSS và JS cần nắm vững để bắt đầu hành trình...</p>
+                <div class="article-footer">
+                    <span class="date"><i class="fa-regular fa-calendar"></i> 02/02/2026</span>
+                    <button class="read-more-btn">ĐỌC TIẾP</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="article-block">
+            <div class="article-thumb">
+                <img src="img/post2.jpg" alt="Post 2">
+                <span class="category-tag bg-[#764ba2]">SỰ KIỆN</span>
+            </div>
+            <div class="article-body">
+                <h3>Workshop Arduino tháng 1: Sáng tạo</h3> 
+                <p>Buổi trải nghiệm thực tế với các cảm biến thông minh và giải pháp nhà tự động...</p>
+                <div class="article-footer">
+                    <span class="date"><i class="fa-regular fa-calendar"></i> 25/01/2026</span>
+                    <button class="read-more-btn">ĐỌC TIẾP</button>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>
  <!-- Footer -->
     <!-- Gradient từ đen sang tím trước footer -->
     <div class="w-full h-12">
